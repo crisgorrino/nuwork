@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="<?php echo asset('css/style.css') ?>" type="text/css" media="all">
 	<link rel="stylesheet" href="<?php echo asset('css/slideshow.css') ?>" type="text/css" media="all"><!--Estilos para el js de Cycle2-->
 	<link rel="stylesheet" href="<?php echo asset('css/normalize.css') ?>" type="text/css" media="all"><!--Estilos para resetear estilos CSS-->
+	<link rel="stylesheet" href="<?php echo asset('css/bootstrap.min.css') ?>" type="text/css" media="all">
 	<title>NuWork - Coworking Space</title>
 
 	<script src="<?php echo asset('js/jquery.js') ?>" type="text/javascript"></script>
@@ -26,30 +27,6 @@
 	<script src="<?php echo asset('js/scrolld.min.js') ?>" type="text/javascript"></script><!--Scrolling Smoth-->
 	<script src="<?php echo asset('js/scrolld.min.js') ?>" type="text/javascript"></script><!--JS que permite quitar los prefijos de efectos CSS como -webkit, -moz (no todos) -->
 	<script src="<?php echo asset('js/angular/angular.min.js') ?>"></script>
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-	//Smooth Scrolling To Internal Links
-	$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();})
-	<?php
-	if( isset($_GET['target'])){
-		if($_GET['target']=='reservaciones'){
-			?>
-			$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();})
-			<?php
-		}else if($_GET['target']=='contacto'){
-			?>		
-			$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();})
-			<?php
-		}else if($_GET['target']=='mapa'){
-			?>
-			$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();})
-			<?php
-		}
-	}
-	?>
-});
-	</script>
 </head>
 
 <body>
@@ -61,11 +38,12 @@
 			<p class="slogan left">Sketch<br>your business</p>
 			<nav class="main-menu">
 				<ul class="left">
-					<li><a id="reservacionesBtn" class="" href="index.php?target=reservaciones">Reservaciones</a></li>
-					<li><a id="contactoBtn" class="" href="index.php?target=contacto">Cont&aacute;ctanos</a></li>
-					<li><a id="mapaBtn" class="" href="index.php?target=mapa">Ubicaci&oacute;n</a></li>
-					<li><a class="" href="<?php echo url('login') ?>">Pagos</a></li>
-					<li><a class="" href="<?php echo url('comprobante-pago') ?>">Carga tu comprobante</a></li>
+					<?php if(Auth::check()): ?>
+					<li><a class="" href="<?php echo url('/') ?>">Stocks</a></li>
+					<li><a class="" href="<?php echo url('pagos') ?>">Pagos</a></li>
+					<li><a class="" href="<?php echo url('solicitudes') ?>">Solicitudes</a></li>
+					<li><a href="<?php echo url('logout') ?>">Salir</a></li>
+					<?php endif; ?>
 				</ul>
 				<a href=""><span class="icon-facebook"></span></a>
 				<a href=""><span class="icon-twitter"></span></a>

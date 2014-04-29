@@ -20,17 +20,4 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
-	public function saveSelection(){
-
-		// Save in session the user selections
-		Session::put('espacios', Input::get('espacios'));
-
-		Session::put('meses', Input::get('meses'));
-
-		Session::put('paquete_id', Input::get('paquete_id'));
-
-		// Redirect to the page of [adicionales]
-		return Redirect::to('adicionales');
-	}
-
 }

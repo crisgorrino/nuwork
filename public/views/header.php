@@ -7,7 +7,7 @@
 				<li><a id="reservacionesBtn" class="" href="index.php?target=reservaciones">Reservaciones</a></li>
 				<li><a id="contactoBtn" class="" href="index.php?target=contacto">Cont&aacute;ctanos</a></li>
 				<li><a id="mapaBtn" class="" href="index.php?target=mapa">Ubicaci&oacute;n</a></li>
-				<li><a class="" href="login.php">Pagos</a></li>
+				<li><a class="" href="<?php echo url('pago') ?>">Pagos</a></li>
 				<li><a class="" href="comprobante-pago.php">Carga tu comprobante</a></li>
 			</ul>
 			<a href="https://www.facebook.com/nuworkgdl"><span class="icon-facebook"></span></a>

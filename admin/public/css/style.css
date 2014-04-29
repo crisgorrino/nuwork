@@ -126,7 +126,7 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .adicionales .saved:hover{background: #fff; border: 1px solid rgba(72,141,216,1); color: #488dd8;}
 
 /*Login*/
-.loginuser-form, .loginadmin-form{width: 80%; margin: 0 auto;}
+.loginuser-form, .loginadmin-form{width: 100%; margin: 0 auto;}
 .loginuser-form h2, .loginadmin-form h2{color: #ff2100; margin: 0;}
 .loginuser-form p, .loginadmin-form p{color: #706f6f; margin:0 0 2.5% 0;}
 .login{width: 30%; margin-left: 10%;}
@@ -252,3 +252,17 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .bg{background: url(../img/bg1.png)no-repeat; background-size: 100%; font-weight: bold;  margin-top: 70px; padding: 9% 0; text-align: center;}
 }
 
+
+/* Estilos para administrador */
+.table{	width: 95% !important; margin:auto; }
+
+h1{ text-align: center; }
+
+legend{ padding-left: 3% !important;}
+
+.que_hacer{ background-color: #FFF !important; height: 150px !important; }
+
+.paginator{
+	text-align: center;
+	margin-bottom: 2%;
+}
