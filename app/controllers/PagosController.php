@@ -46,12 +46,12 @@ class PagosController extends BaseController {
 		->where('meses', '=', $solicitud['meses'])
 		->where('espacios', '=', $solicitud['espacios'])
 		->first()->toArray();
+		
 		$total += $paquete_precio['precio'];
 
 		// obtener el nombre del paquete
 		$paquete = Paquete::find($solicitud['paquete_id'])->toArray();
 		
-
 		$productos['item_name'][0]	= $paquete['nombre'];
 		$productos['item_code'][0] 	= $paquete['id'];
 		$productos['item_price'][0] = $paquete_precio['precio'];
@@ -75,6 +75,14 @@ class PagosController extends BaseController {
 			$paypal = new PayPalLib\ExpressCheckout();
 			$paypal->doCheckout($productos, 0, $total * .16);
 		}else{
+
+			Mail::send( 'emails.ficha-pago', array('total' => $total), function($message) use($solicitud){
+				$message->to($solicitud['correo'], 'Nuwork - Ficha de Pago')->subject('Nuwork - Ficha de Pago');
+			});
+
+			$usuario->status = 2;
+			$usuario->save();
+
 			return Redirect::to('ficha-pago');
 		}
 		return Response::make(Input::all());
@@ -138,7 +146,6 @@ class PagosController extends BaseController {
 			$detalles = $paypal->GetShippingDetails(Input::get('token'));
 			
 			$usuario = Auth::user();
-			var_dump($detalles);
 			$orden = new Orden();
 			$orden->usuario_id = $usuario->id;
 			$orden->TOKEN = $detalles['TOKEN'];
@@ -163,12 +170,26 @@ class PagosController extends BaseController {
 			$orden->CURRENCYCODE = $detalles['CURRENCYCODE'];
 			$orden->AMT = $detalles['AMT'];
 			$orden->PAYMENTREQUEST_0_TRANSACTIONID = $detalles['PAYMENTREQUEST_0_TRANSACTIONID'];
+			$orden->tipo_pago = 'Paypal';
+			$orden->status = 1;
+
 			$orden->save();
 
+			// cambiar el status del usuario
 			$usuario->status = 2;
 			$usuario->save();
+
+
+			// quitar stock
+			$solicitud = Solicitud::where('id', '=', $usuario->solicitud_id)->first()->toArray();
+			$stock = Stock::where('paquete_id', '=', $solicitud['paquete_id'])->first();
+			$stock->stock -= $solicitud['espacios'];
+			$stock->save();
+			
+			Auth::logout();
 			return Redirect::to('pago-realizado');
 		}else{
+			Auth::logout();
 			return Redirect::to('pago-fallo');
 		}
 	}

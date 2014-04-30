@@ -63,8 +63,62 @@ Route::group(array('before' => 'auth'), function(){
 		foreach($ordenes as $orden){
 			$usuario = Usuario::find($orden['usuario_id'])->toArray();
 			$solicitud = Solicitud::find($usuario['solicitud_id'])->toArray();
+			$orden['solicitud'] = $solicitud;
+
+			$pagos[] = $orden;
 		}
-		return Response::json($ordenes);
+		return Response::json($pagos);
+	});
+
+	// Restar stock del paquete seleccionado
+	Route::put('getPaqueteStock', function(){
+		if( Orden::find(Input::get('orden_id'))->exists() ){
+			$orden = Orden::where('id', '=', Input::get('orden_id'))->first()->toArray();
+			$usuario = Usuario::where('id', '=', $orden['usuario_id'])->first()->toArray();
+			$solicitud = Solicitud::where('id', '=', $usuario['solicitud_id'])->first()->toArray();
+			$stock = Stock::where('paquete_id', '=', $solicitud['paquete_id'])->first()->toArray();
+
+			$needed_stock = $solicitud['espacios'];
+			$actual_stock = $stock['stock'];
+
+			// verificar haya espacios disponibles
+			if($needed_stock <= $actual_stock){
+				$sufficient = true;
+
+				// actualizar el stock
+				$new_stock = Stock::where('paquete_id', '=', $solicitud['paquete_id']);
+				$new_stock->update(array( 'stock'=>($actual_stock - $needed_stock) ));
+
+				// actualizar el status de la orden
+				$orden = Orden::where('id', '=', Input::get('orden_id'))
+					->update(array('status'=>Input::get('status')));
+			}else{
+				$sufficient = false;
+			}
+		}else{
+			Response::json(array('error'=>'Orden no encotrada'));
+		}
+		return Response::json(array(
+			'sufficient'=>$sufficient,
+			'needed_stock'=>$needed_stock,
+			'actual_stock'=>$actual_stock - $needed_stock
+		));
+	});
+	
+	// Restaurar stock
+	Route::post('restoreStock', function(){
+		$orden = Orden::where('id', '=', Input::get('orden_id'))->first()->toArray();
+		$usuario = Usuario::where('id', '=', $orden['usuario_id'])->first()->toArray();
+		$solicitud = Solicitud::where('id', '=', $usuario['solicitud_id'])->first()->toArray();
+		$stock = Stock::where('paquete_id', '=', $solicitud['paquete_id'])->first()->toArray();
+
+		$restored_stock = $solicitud['espacios'];
+		$actual_stock = $stock['stock'];
+
+		$new_stock = Stock::where('paquete_id', '=', $solicitud['paquete_id']);
+		$new_stock->update(array( 'stock'=>($restored_stock+$actual_stock) ));
+
+		return Response::json(array( 'actual_stock'=> $actual_stock + $restored_stock ));
 	});
 
 });
@@ -81,5 +135,4 @@ Route::post('login', function(){
 		return Redirect::to('login');
 	}
 });
-
 

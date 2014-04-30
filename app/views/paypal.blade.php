@@ -58,7 +58,7 @@
                 <!--precio unitario-->      
                 <div class="pu-total">
                     <span>
-                        ${{$adicional['precio']}} MXN
+                        ${{ number_format($adicional['precio'], 2) }} MXN
                     </span>
                 </div>
                 <!--precio unitario-->      
@@ -69,11 +69,11 @@
         <section class="totales2 cf">
             <div class="sub">
                 <span>IVA</span>
-                <p id="ajax_gran_total">${{$iva}} MXN</p>
+                <p id="ajax_gran_total">${{ number_format($iva, 2)}} MXN</p>
             </div>
             <div class="sub">
                 <span>Total </span>
-                <p id="ajax_gran_total">${{$total + $iva}} MXN</p>
+                <p id="ajax_gran_total">${{ number_format($total + $iva, 2) }} MXN</p>
             </div>
             <br>
             <?php echo Form::open(array('url'=>'confirmar-pago', 'id'=>'frm_confirmar')) ?>

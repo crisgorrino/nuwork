@@ -1,5 +1,3 @@
-@extends('layout')
-@section('content')
 <section class="container cf pdd">
 		<section class="inner">
 		<table style="width:900px; " align="center">
@@ -17,7 +15,7 @@
             <div class="registro_form">
                 <!--<img src="img/bank.png" alt="ScotiaBank" class="in_line">-->
                 <p class="in_line deposito_titulo center">DATOS PARA DEP&Oacute;SITO O TRANSFERENCIA BANCARIA </p>
-                <img src="img/hsbc.png" alt="" class="">
+                <img src="<?php echo $message->embed(asset('img/hsbc.png')) ?>" alt="" class="">
                 <hr>
                 <br>
                 
@@ -74,4 +72,3 @@
         </table>
 		</section>
 	</section>
-@stop

@@ -35,6 +35,7 @@
         <section class="totales cf">
             <span>TOTAL</span>
             <p id="ajax_gran_total">$<?php echo number_format($total) ?> MXN</p>
+            <% metodo %>
             <?php echo Form::open() ?>
                 <input type="hidden" name="metodo" value="<% metodo %>">
                 <input type="submit" class="confirm-btn" value="Continuar">
