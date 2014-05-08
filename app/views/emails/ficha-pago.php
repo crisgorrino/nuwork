@@ -8,8 +8,8 @@
             $no_cuenta='4043505981'; //'01002633906';
             $CLABE='021320040435059811'; //'044320010026339067';
             $rfc='GOGR910620JF2'; //'CEUC8912016GA';
-            $referencia='PAGO MERCANC&Iacute;A TIENDA  ONLINE <a href="http://www.nuwork.mx" target="_blank">www.nuwork.mx</a> NO. DE ORDEN 1';
-            $pago_total="$2,500 MXN";
+            $referencia='PAGO MERCANC&Iacute;A TIENDA  ONLINE <a href="http://www.nuwork.mx" target="_blank">www.nuwork.mx</a> NO. DE ORDEN '.$solicitud['id'];
+            $pago_total="$".number_format($orden['AMT'], 2)." MXN";
             ?>
             <p style="border-bottom: 1px solid rgb(0, 0, 0); padding: 2% 0; text-align:justify;">Gracias por comprar en nuestra Online Store. Usted a elegido dep&oacute;sito o transferencia bancaria como m&eacute;todo de pago. Para continuar con el proceso de compra usted deberá de realizar el pago a la cuenta que se encuentra a continuación.</p>
             <div class="registro_form">
@@ -61,11 +61,10 @@
             </p>            
             <br>
             <p>Una vez realizado el dep&oacute;sito o la transferencia bancaria, deber&aacute;s cargar el comprobante ya sea escaneado o impresi&oacute;n de pantalla en nuestro sistema ingresando a Carga tu Comprobante ubicado en la parte superior de nuestra p&aacute;gina, &oacute; bien haciendo <a href="comprobante-pago.php" class="turq" target="_blank">click aqu&iacute;</a>, con los siguientes datos de usuario:</p>
-                <br>
-                    <strong>E-mail:</strong> usuario@mail.com<br>
-                    <strong>No. Orden:</strong> 1<br>
-                <br>
-            <p>Una vez cargado y validado por nuestro personal, tu mercanc&iacute;a se te har&aacute; llegar en los t&eacute;rminos establecidos en el met&oacute;do de env&iacute;o que elegiste.</p>
+            <br>
+            <strong>E-mail:</strong> <?php echo $solicitud['correo'] ?><br>
+            <strong>No. Orden:</strong> <?php echo $solicitud['id'] ?><br>
+
             <p>Para cualquier duda o aclaraci&oacute;n favor de contact&aacute;rse al (044) 33 1325 0788 &oacute; env&iacute;e un correo a ventas@nuwork.mx.</p>
             </td>
         </tr>

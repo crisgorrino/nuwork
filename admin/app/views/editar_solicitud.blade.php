@@ -20,7 +20,7 @@
 					<th>Correo</th>
 					<th>Celular</th>
 					<th>Proyecto/Empresa</th>
-					<th>¿Por qué quiere entrar?</th>
+					
 					<th>Fecha</th>
 					<th>Status</th>
 				</thead>
@@ -36,11 +36,7 @@
 					<td><?php echo $solicitud['correo'] ?></td>
 					<td><?php echo $solicitud['celular'] ?></td>
 					<td><?php echo $solicitud['proyecto'] ?></td>
-					<td>
-						<textarea class="form-control que_hacer" disabled="disabled">
-							<?php echo $solicitud['que_hacer'] ?>
-						</textarea>
-					</td>
+					
 					<td><?php echo $solicitud['created_at'] ?></td>
 					<td ng-init="status={{$solicitud['status']}}">
 						<select class="form-control" ng-change="updateStatus()" ng-model="status" ng-options="option.id as option.descripcion for option in options">
@@ -50,28 +46,40 @@
 					
 				</tr>
 			</table>
+			<table class="table table-striped">
+				<thead>
+					<th>¿Por qué quiere entrar?</th>
+				</thead>
+				<tr>
+					<td>
+						<textarea class="form-control que_hacer" disabled="disabled">
+							<?php echo $solicitud['que_hacer'] ?>
+						</textarea>
+					</td>
+				</tr>
+			</table>
 		</fieldset>
 		<fieldset>
 			<legend>Servicios Adicionales</legend>
 			<?php if(!empty($adicionales)): ?>
-			<table class="table table-striped">
-				<thead>
-					<th>Adicional</th>
-					<th>Meses</th>
-					<th>Espacios</th>
-				</thead>
-				<?php foreach($adicionales as $adicional): ?>
-					<tr>
-						<td>{{$adicional['nombre']}}</td>
-						<td>{{$adicional['meses']}}</td>
-						<td>{{$adicional['espacios']}}</td>
-					</tr>
-				<?php endforeach; ?>
-			</table>
-		<?php else: ?>
-			No se solicito ningún servicio adicional para esta solicitud
-			<br><br>
-		<?php endif;?>
+				<table class="table table-striped">
+					<thead>
+						<th>Adicional</th>
+						<th>Meses</th>
+						<th>Espacios</th>
+					</thead>
+					<?php foreach($adicionales as $adicional): ?>
+						<tr>
+							<td>{{$adicional['nombre']}}</td>
+							<td>{{$adicional['meses']}}</td>
+							<td>{{$adicional['espacios']}}</td>
+						</tr>
+					<?php endforeach; ?>
+				</table>
+			<?php else: ?>
+				No se solicito ningún servicio adicional para esta solicitud
+				<br><br>
+			<?php endif;?>
 		</fieldset>
 	</div>
 </section>

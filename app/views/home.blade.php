@@ -12,9 +12,9 @@
 	<div class="cycle-slideshow" data-cycle-fx="fadeout" data-cycle-speed=1500 data-cycle-timeout=4000 data-cycle-next="#next" data-cycle-manual-fx="fadeout"  data-cycle-manual-speed="200">
 		<!-- empty element for pager links -->
 		<div class="cycle-pager"></div>
-		<img src="img/slide1.jpg">
-		<img src="img/slide2.jpg">
-		<img src="img/slide3.jpg">
+		<img src="{{'img/slide1.jpg'}}">
+		<img src="{{'img/slide2.jpg'}}">
+		<img src="{{'img/slide3.jpg'}}">
 	</div>
 </section>
 <section class="container cf">
@@ -59,10 +59,10 @@
 			
 			<div class="precios">
 				<h3>Gold label</h3>
-				<p><% precio_mensual_1 | currency:"$" %> MXN/ 1 mes</p>
+				<p><% precio_mensual_1 | currency:"$" %> MXN/ <% meses %> mes</p>
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
-					<li>1 escritorio en área en comun</li>
+					<li><% espacios %> escritorio en área en comun</li>
 					<li>Llamadas locales e nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
@@ -75,10 +75,10 @@
 
 			<div class="precios">
 				<h3>Diamond label</h3>
-				<p><% precio_mensual_2 | currency:"$" %> MXN/ 1 mes</p>
+				<p><% precio_mensual_2 | currency:"$" %> MXN/ <% meses %> mes</p>
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
-					<li>1 escritorio FIJO</li>
+					<li><% espacios %> escritorio FIJO</li>
 					<li>Llamadas locales e nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
@@ -92,10 +92,10 @@
 			
 			<div class="precios">
 				<h3>Privado</h3>
-				<p><% precio_mensual_3 | currency:"$" %> MXN/ 1 mes</p>
+				<p><% precio_mensual_3 | currency:"$" %> MXN/ <% meses %> mes</p>
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
-					<li>1 escritorio FIJO</li>
+					<li><% espacios %> escritorio FIJO</li>
 					<li>Llamadas locales e nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>

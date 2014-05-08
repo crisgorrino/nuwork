@@ -67,8 +67,8 @@ class PagosController extends BaseController {
 
 			$productos['item_name'][$i] 	= $adicional['nombre'];
 			$productos['item_code'][$i] 	= $adicional['id'];
-			$productos['item_price'][$i] =  $precio_de_adicional;
-			$productos['item_qty'][$i] 	= 1;
+			$productos['item_price'][$i] 	=  $precio_de_adicional;
+			$productos['item_qty'][$i] 		= 1;
 			$i++;
 		}
 		if(Input::get('metodo') == 'credito' || Input::get('metodo') == 'debito'){
@@ -76,7 +76,14 @@ class PagosController extends BaseController {
 			$paypal->doCheckout($productos, 0, $total * .16);
 		}else{
 
-			Mail::send( 'emails.ficha-pago', array('total' => $total), function($message) use($solicitud){
+			$orden = new Orden();
+			$orden->usuario_id = $usuario->id;
+			$orden->AMT = $total;
+			$orden->tipo_pago = 'Deposito';
+			$orden->status = 1;
+			$orden->save();
+			
+			Mail::send( 'emails.ficha-pago', array('total' => $total, 'usuario'=>$usuario, 'solicitud'=>$solicitud, 'orden'=>$orden), function($message) use($solicitud){
 				$message->to($solicitud['correo'], 'Nuwork - Ficha de Pago')->subject('Nuwork - Ficha de Pago');
 			});
 
