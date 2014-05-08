@@ -58,7 +58,7 @@ nav{width: 70%; float: right;}
 .bg{background: url(../img/bg1.png)no-repeat; background-size: 100%; font-weight: bold;  margin-top: 70px; padding: 10% 0; text-align: center;}
 .bg p{color: #949393; font-size: 1.2em; margin-bottom: 3.5%; }
 .bg p span{color: #000;}
-.bg a{background: #488dd8; border-radius: 4px; border: 1px solid rgba(72,141,216,0); color: #fff; margin-top: 20px; padding: 15px 25px; transition: color .25s ease-in, background-color .25s ease-in; text-decoration: none;}
+.bg a{background: #488dd8; border-radius: 4px; border: 1px solid rgba(72,141,216,0); color: #fff; padding: 15px 25px; transition: color .25s ease-in, background-color .25s ease-in; text-decoration: none;}
 .bg a:hover{background: #fff; border: 1px solid rgba(72,141,216,1); color: #488dd8;}
 .rojo1{background: url(../img/bg-des1.jpg)no-repeat top center; background-size: cover;}
 .rojo2{background: url(../img/bg-des2.jpg)no-repeat top center; background-size: cover;border-left: 1px solid #fff; border-right: 1px solid #fff;}
@@ -124,7 +124,9 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .adicionales a:hover{background: #fff; border: 1px solid rgba(72,141,216,1); color: #488dd8;}
 .adicionales .saved{background: green; border-radius: 4px; border: 1px solid rgba(72,141,216,0); bottom: 10px; color: #fff; position: absolute; padding: 14px 35px; right: 23%; transition: color .25s ease-in, background-color .25s ease-in; text-decoration: none;}
 .adicionales .saved:hover{background: #fff; border: 1px solid rgba(72,141,216,1); color: #488dd8;}
-.button{background: #488dd8; border-radius: 4px; border: 1px solid rgba(72,141,216,0); bottom: 10px; color: #fff; padding: 14px 35px; transition: color .25s ease-in, background-color .25s ease-in; text-decoration: none; margin-left: 20%;}
+.button{background: #488dd8; border-radius: 4px; border: 1px solid rgba(72,141,216,0); color: #fff; padding: 14px 35px; transition: color .25s ease-in, background-color .25s ease-in; text-decoration: none; margin: 20px auto; display: block;}
+.button:hover{background: #fff; border: 1px solid rgba(72,141,216,1); color: #488dd8;}
+
 /*Login*/
 .loginuser-form, .loginadmin-form{width: 80%; margin: 0 auto;}
 .loginuser-form h2, .loginadmin-form h2{color: #ff2100; margin: 0;}
@@ -180,6 +182,11 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .aplicar-btn:hover{background: #fff; border: 1px solid rgba(72,141,216,1); color: #488dd8;}
 .totales ul{font-style: italic; list-style: outside none; padding: 0;}
 
+/*--Realiado--*/
+.realizado{height: 500px; text-align: center; margin: 10% auto;}
+.realizado h1, .realizado h3{text-align: center;}
+.realizado img{margin: 5% auto; display: block; width: 40%;}
+
 /*---confirmacion---*/
 .metodos-d-pago{width: 70%; margin: 0 auto 8%;}
 .datos-d-reserva{width: 72%; float: left; margin-top: 6.5%;}
@@ -233,7 +240,60 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 
 /* Mobiles (portrait and landscape) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media all and  (min-width : 320px) and (max-width : 759px){
+body{font-size: 80%;}
+header{position: relative;}
+.inner{width: 96%;}
 
+/*Header*/
+nav{float: none;}
+
+/*--Index--*/
+h1{font-size: 1.5em!important;}
+.bg{background-size: cover; background-position: center;}
+.bg a{padding: 8px 25px;}
+.rojo1, .rojo2, .rojo3 {width: 100%; height: 250px;}
+.nuwork p {width: 96%;}
+.precios{width: 55%; margin: 0 1.6% 5% 1.6%;}
+.contact-form{width: 90%;}
+.contact{width: 100%;}
+.contact-form p{width: 100%;}
+
+/*--Adicionales--*/
+.adicionales{width: 60%; float: none; display: block; margin: 0 auto 5% auto;}
+.adicionales:nth-child(4n+1){margin: 0 auto 5% auto;}
+.adicionales:nth-child(4n){margin: 0 auto 5% auto;}
+
+
+/*--Reservar--*/
+.datos-d-reserva{width: 60%;}
+.namedata{width: 100%;}
+.contactdata{width: 100%;}
+.contactdata input[type="text"], .contactdata textarea{margin-bottom: 2.5%; padding: 2.5%; width: 100%!important;}
+.totales2{width: 39%; margin-top: 7%;}
+.totales2 span{width: 72%;}
+.totales2 p{width: 100%;}
+.producto-hd{width: 31%;}
+.producto{width: 33.5%;}
+
+/*--Realiado--*/
+.realizado{height: 10%; margin: 0 auto;}
+.realizado img{margin: 5% auto; display: block; width: 100%;}
+
+/*--Login--*/
+.loginuser-form{width: 100%;}
+.loginuser-form img{display: none;}
+.login{width: 100%; margin-left: 0;}
+
+/*Footer*/
+.logo-foot{display: block; margin: 0 auto;}
+
+/*--Metodos de Pago--*/
+.metodos-d-pago{width: 100%;}
+.metodo-cred, .metodo-trans{width: 99%; margin-bottom: 30px;}
+.metodo-cred label, .metodo-trans label{width: 59%; display: block; margin: 2.5% auto;}
+.totales{width: 100%;}
+.totales .confirm-btn{display: block; margin: 20px auto 0 auto;}
+.
 }
 
 /* iPads (portrait) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -248,7 +308,6 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 
 /* Desktop, Notebook and Large screens ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 @media all and (min-width : 1600px) { 
-.inner{margin: 0 auto; padding: 0; width: 62%;}
-.bg{background: url(../img/bg1.png)no-repeat; background-size: 100%; font-weight: bold;  margin-top: 70px; padding: 9% 0; text-align: center;}
+
 }
 
