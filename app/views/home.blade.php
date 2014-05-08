@@ -123,7 +123,7 @@
 				<?php echo Form::text('email', '', array('placeholder'=>'E-mail')) ?>
 				<?php echo Form::text('telefono', '', array('placeholder'=>'Teléfono')) ?>
 				<?php echo Form::text('ciudad', '', array('placeholder'=>'Ciudad')) ?>
-				<?php echo Form::text('medio', '', array('placeholder'=>'¿Cómo te enteraste de nosotros')) ?>
+				<?php echo Form::text('medio', '', array('placeholder'=>'¿Cómo te enteraste de nosotros?')) ?>
 			</div>
 			<div class="contact">
 				<?php echo Form::textarea('mensaje', '', array('placeholder'=>'Mensaje')); ?>

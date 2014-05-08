@@ -2,7 +2,7 @@
 @section('content')
 <section class="container cf pdd">
 		<section class="inner">
-		<table style="width:900px; " align="center">
+		<table style="width:100%; " align="center">
         <tr>
             <td>
             <?php
@@ -21,7 +21,7 @@
                 <hr>
                 <br>
                 
-                <table border="0" bordercolor="#0000" style="background-color:transparent; width:900px;" cellpadding="3" cellspacing="1">
+                <table border="0" bordercolor="#0000" style="background-color:transparent; width:100%;" cellpadding="3" cellspacing="1">
                     <tr style="">
                         <td style="" colspan="2">
                         <p style="padding: 2%; border: 1px solid rgb(0, 0, 0); vertical-align: middle; width: 96%;"><strong>Lugar y Fecha:</strong><br />ZAPOPAN, JAL&nbsp;&nbsp;&nbsp;{{date('d/m/Y')}}<br> 
