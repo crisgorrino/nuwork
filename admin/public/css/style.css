@@ -266,3 +266,10 @@ legend{ padding-left: 3% !important;}
 	text-align: center;
 	margin-bottom: 2%;
 }
+
+#frm-filter{
+	text-align: center;
+	width: 95%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
