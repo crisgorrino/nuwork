@@ -73,7 +73,7 @@ class ReservarController extends BaseController {
 		$solicitud->status = 1;
 		$solicitud->save();
 
-	// crear usuario
+		// crear usuario
 		$usuario = new Usuario();
 		$rnd_string = new RandomString();
 		$usuario->password = '';
@@ -83,16 +83,19 @@ class ReservarController extends BaseController {
 
 		$adicionales = array();
 		foreach(Input::get('adicionales') as $id_adicional){
+			$meses = Input::get('adicional_meses');
+			$espacios = Input::get('adicional_espacios');
+
 			$a = new SolicitudFeature();
 			$a->solicitud_id = $solicitud->id;
 			$a->feature_id = $id_adicional;
-			$a->meses = Input::get('meses_'.$id_adicional);
-			$a->espacios = Input::get('espacios_'.$id_adicional);
+			$a->meses = $meses[$id_adicional];
+			$a->espacios = $espacios[$id_adicional];
 			$a->save();
 
 			$feature = Adicional::where('id', '=', $a->feature_id)->first()->toArray();
-			$feature['meses'] = Input::get('meses_'.$id_adicional);
-			$feature['espacios'] = Input::get('espacios_'.$id_adicional);
+			$feature['meses'] = $meses[$id_adicional];
+			$feature['espacios'] = $espacios[$id_adicional];
 			$adicionales[] = $feature;
 		}
 
@@ -100,7 +103,7 @@ class ReservarController extends BaseController {
 
 		Mail::send( 'emails.solicitud-mail', array('datos'=>Input::all(), 'paquete'=>$paquete, 'adicionales'=>$adicionales), function($message)
 		{
-			$message->to('portela828@gmail.com', 'Nuwork - Nueva Solicitud')->subject('Nuwork - Nueva Solicitud');
+			$message->to('carlos.cerdau@bitweb.mx', 'Nuwork - Nueva Solicitud')->subject('Nuwork - Nueva Solicitud');
 		});
 
 		return Redirect::to('solicitud-realizada');

@@ -27,6 +27,10 @@
 	<script src="<?php echo asset('js/scrolld.min.js') ?>" type="text/javascript"></script><!--Scrolling Smoth-->
 	<script src="<?php echo asset('js/scrolld.min.js') ?>" type="text/javascript"></script><!--JS que permite quitar los prefijos de efectos CSS como -webkit, -moz (no todos) -->
 	<script src="<?php echo asset('js/angular/angular.min.js') ?>"></script>
+
+	<!-- JQuery UI -->
+	<script type="text/javascript" src="<?php echo asset('jqueryui/js/jquery-ui-1.10.4.custom.min.js') ?>"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo asset('jqueryui/css/flick/jquery-ui-1.10.4.custom.min.css') ?>">
 </head>
 
 <body>

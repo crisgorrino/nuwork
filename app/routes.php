@@ -22,7 +22,6 @@ Route::get('adicionales', function(){
 
 Route::post('adicionales', 'ReservarController@showCarrito');
 
-
 Route::get('login', function(){
 	return View::make('login');
 });
@@ -49,8 +48,12 @@ Route::group(array('before' => 'auth'), function(){
 	Route::post('pago', 'PagosController@procesarPago');
 
 	Route::get('ficha-pago', function(){
+		$usuario = Auth::user();
+		$orden = Orden::where('usuario_id','=',$usuario->id)->first()->toArray();
+		$solicitud = Solicitud::where('id', '=',$usuario->solicitud_id)->first()->toArray();
+
 		Auth::logout();
-		return View::make('ficha-pago');
+		return View::make('ficha-pago')->with(array('usuario'=>$usuario, 'orden'=>$orden, 'solicitud'=>$solicitud));
 	});
 
 	Route::get('paypal', 'PagosController@preConfirmacion');
@@ -98,20 +101,12 @@ Route::post('comprobante-pago', function(){
 				$orden = Orden::where('usuario_id', '=', $usuario['id'])->first()->toArray();
 				
 				if(file_exists($destinationPath.$orden['comprobante'])){
-					unlink($destinationPath.$orden['comprobante']);	
+					if(is_file($destinationPath.$orden['comprobante']))
+						unlink($destinationPath.$orden['comprobante']);	
 				}
-				
-				$orden->comprobante = $filename;
-			}else{
-				$orden = new Orden();
-				$orden->usuario_id = $usuario['id'];
-				$orden->AMT = $total + ($total * .16);
-				$orden->status = 1;
-				$orden->tipo_pago = 'Deposito';
-				$orden->comprobante = $filename;
-				$orden->save();
+				$orden = Orden::where('usuario_id', '=', $usuario['id']);
+				$orden->update(array('comprobante'=>$filename));
 			}
-			
 		}
 
 		return Redirect::to('comprobante-enviado');

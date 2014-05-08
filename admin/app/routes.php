@@ -56,10 +56,29 @@ Route::group(array('before' => 'auth'), function(){
 		return View::make('pagos');
 	});
 
+	Route::post('pagos', function(){
+		if(Input::has('status')){
+			Session::put('status', Input::get('status'));
+		}
+		if(Input::has('tipo_pago')){
+			Session::put('tipo_pago',Input::get('tipo_pago'));
+		}
+		
+		Session::put('nombre', Input::get('nombre'));
+		
+		Session::put('apellidos', Input::get('apellidos'));
+
+		Session::put('desde', Input::get('desde'));
+
+		Session::put('hasta', Input::get('hasta'));
+		
+		return Redirect::to('pagos');
+	});
+
 	Route::get('getPagos', function(){
 		$pagos = array();
 		
-		$ordenes = Orden::all()->toArray();
+		$ordenes = Orden::orderBy('id', 'DESC')->get()->toArray();
 		foreach($ordenes as $orden){
 			$usuario = Usuario::find($orden['usuario_id'])->toArray();
 			$solicitud = Solicitud::find($usuario['solicitud_id'])->toArray();
@@ -67,16 +86,101 @@ Route::group(array('before' => 'auth'), function(){
 
 			$pagos[] = $orden;
 		}
-		return Response::json($pagos);
+
+		// filtar resultados
+		$result = array();
+		
+		// filtrar por status
+		if(Session::get('status') != '0'){
+			foreach($pagos as $pago){
+				if($pago['status'] == Session::get('status')){
+					$result[] = $pago;
+				}	
+			}
+		}else{
+			$result = $pagos;
+		}
+
+		// filtrar por tipo de pago
+		if(Session::get('tipo_pago') != '0' ){
+			$tmp = array();
+			foreach($result as $pago){
+				if($pago['tipo_pago'] == Session::get('tipo_pago')){
+					$tmp[] = $pago;
+				}
+			}
+			$result = $tmp;
+		}
+
+		// filtrar por nombre
+		if( Session::get('nombre') != '' ) {
+			$tmp = array();
+			foreach($result as $pago){
+				if(strtolower($pago['solicitud']['nombre'])  == strtolower(Session::get('nombre'))){
+					$tmp[] = $pago;
+				}
+			}
+			$result = $tmp;
+		}
+
+		// filtrar por appellidos
+		if(Session::get('apellidos') != ''){
+			$tmp = array();
+			foreach($result as $pago){
+				if( strtolower($pago['solicitud']['apellidos']) == strtolower(Session::get('apellidos')) ){
+					$tmp[] = $pago;
+				}
+			}
+			$result = $tmp;
+		}
+
+		//filtrar por fecha
+		if(Session::get('desde') != '' && Session::get('hasta') != ''){
+			$tmp = array();
+			foreach ($result as $pago) {
+				$created_date = strtotime($pago['created_at']);
+				if( $created_date >= strtotime(Session::get('desde')) &&
+					 $created_date <= strtotime(Session::get('hasta').' +1 day') ){
+					$tmp[] = $pago;
+				}
+			}
+			$result = $tmp;
+		}else{
+			if(Session::get('desde') != ''){
+				$tmp = array();
+				foreach ($result as $pago) {
+					$created_date = strtotime($pago['created_at']);
+					if( $created_date >= strtotime(Session::get('desde'))  ){
+						$tmp[] = $pago;
+					}
+				}
+				$result = $tmp;
+			}
+
+			if(Session::get('hasta') != ''){
+				$tmp = array();
+				foreach ($result as $pago) {
+					$created_date = strtotime($pago['created_at']);
+					if( $created_date <= strtotime(Session::get('hasta'))  ){
+						$tmp[] = $pago;
+					}
+				}
+				$result = $tmp;	
+			}
+		}
+		
+		
+		return Response::json($result);
 	});
 
 	// Restar stock del paquete seleccionado
 	Route::put('getPaqueteStock', function(){
 		if( Orden::find(Input::get('orden_id'))->exists() ){
-			$orden = Orden::where('id', '=', Input::get('orden_id'))->first()->toArray();
-			$usuario = Usuario::where('id', '=', $orden['usuario_id'])->first()->toArray();
-			$solicitud = Solicitud::where('id', '=', $usuario['solicitud_id'])->first()->toArray();
-			$stock = Stock::where('paquete_id', '=', $solicitud['paquete_id'])->first()->toArray();
+
+			$orden 		= Orden::where('id', '=', Input::get('orden_id'))->first()->toArray();
+			$usuario 	= Usuario::where('id', '=', $orden['usuario_id'])->first()->toArray();
+			$solicitud 	= Solicitud::where('id', '=', $usuario['solicitud_id'])->first()->toArray();
+			$stock 		= Stock::where('paquete_id', '=', $solicitud['paquete_id'])->first()->toArray();
 
 			$needed_stock = $solicitud['espacios'];
 			$actual_stock = $stock['stock'];
@@ -117,6 +221,9 @@ Route::group(array('before' => 'auth'), function(){
 
 		$new_stock = Stock::where('paquete_id', '=', $solicitud['paquete_id']);
 		$new_stock->update(array( 'stock'=>($restored_stock+$actual_stock) ));
+
+		$orden = Orden::where('id', '=', Input::get('orden_id'));
+		$orden->update(array('status'=>Input::get('status')));
 
 		return Response::json(array( 'actual_stock'=> $actual_stock + $restored_stock ));
 	});

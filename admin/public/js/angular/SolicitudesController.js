@@ -16,7 +16,7 @@ app.controller('Solicitudes', function($scope, $http){
 
  	// variables de paginacion
 	$scope.currentPage = 0;
-	$scope.pageSize = 5;
+	$scope.pageSize = 10;
  	$scope.numberOfPages=function(){
         return Math.ceil($scope.solicitudes.length/$scope.pageSize);                
     }

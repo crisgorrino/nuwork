@@ -23,7 +23,7 @@ app.controller('Pagos', function($scope, $http){
 
  	// variables de paginacion
 	$scope.currentPage = 0;
-	$scope.pageSize = 7	;
+	$scope.pageSize = 10;
  	$scope.numberOfPages=function(){
         return Math.ceil($scope.pagos.length/$scope.pageSize);                
     }
@@ -41,27 +41,29 @@ app.controller('Pagos', function($scope, $http){
                 params: {orden_id: orden_id, status:status}
             }).success(function(response){
                 if(!response.sufficient){
-                    alert('No hay espacios suficientes');
+                    $( "#dialog-confirm" ).dialog({
+                      resizable: false,
+                      height:140,
+                      modal: true,
+                      //buttons: {
+                      //  "Delete all items": function() {
+                      //      $( this ).dialog( "close" );
+                      //  },
+                      //  Cancel: function() {
+                      //      $( this ).dialog( "close" );
+                      //  }
+                      //}
+                    });
                     $scope.status[orden_id] = 1;
                 }
             });
         }else{
             $http.post(
                 'restoreStock',
-                {orden_id: orden_id})
+                {orden_id: orden_id, status : status})
             .success(function(response){
                 //console.log(response);
             });
-        }
-    };
-
-    $scope.test = function(value){
-        console.log(value);
-        if(value != 0 || value != ''){
-            console.log('largo');
-            $scope.pageSize = $scope.pagos.length;
-        }else{
-            $scope.pageSize = 7;
         }
     };
 

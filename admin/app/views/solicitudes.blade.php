@@ -21,7 +21,7 @@
 				<th ng-click="order='created_at'; reverse=!reverse">Fecha</th>
 				<th></th>
 			</thead>
-			<tr ng-repeat="solicitud in solicitudes | orderBy:order:reverse | startFrom:currentPage*pageSize | limitTo:pageSize">
+			<tr ng-repeat="solicitud in solicitudes | startFrom:currentPage*pageSize | limitTo:pageSize">
 				<td><% solicitud.id %></td>
 				<td><% solicitud.paquete %></td>
 				<td><% solicitud.meses %></td>
@@ -40,9 +40,9 @@
 
 		</table>
 		<div class="paginator">
-			<button class="btn btn-default" ng-disabled="currentPage==0" ng-click="currentPage=currentPage-1">Anterior</button>
+			<button class="btn btn-primary" ng-disabled="currentPage==0" ng-click="currentPage=currentPage-1">Anterior</button>
 			<% currentPage + 1%> / <% numberOfPages() %>
-			<button class="btn btn-default" ng-disabled="currentPage >= solicitudes.length/pageSize - 1" ng-click="currentPage=currentPage+1">Siguiente</button>
+			<button class="btn btn-primary" ng-disabled="currentPage >= solicitudes.length/pageSize - 1" ng-click="currentPage=currentPage+1">Siguiente</button>
 		</div>
 
 	</div>

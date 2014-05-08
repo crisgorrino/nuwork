@@ -4,7 +4,7 @@ class SolicitudesController extends BaseController {
 	
 	// Obtener todas las solicitudes registradas
 	public function getSolicitudes(){
-		$solicitudes = Solicitud::all()->toArray();
+		$solicitudes = Solicitud::orderBy('id', 'DESC')->get()->toArray();
 		$s = array();
 		foreach($solicitudes as $solicitud){
 			$paquete = Paquete::find($solicitud['paquete_id'])->toArray();
