@@ -59,10 +59,10 @@
 			
 			<div class="precios">
 				<h3>Gold label</h3>
-				<p><% precio_mensual_1 | currency:"$" %> MXN/ <% meses %> mes</p>
+				<p><% precio_mensual_1 | currency:"$" %> MXN/ <% meses %> mes<% meses > 1 ? 'es' : '' %></p>
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
-					<li><% espacios %> escritorio en área en comun</li>
+					<li><% espacios %> escritorio<% espacios > 1 ? 's': '' %> en área en comun</li>
 					<li>Llamadas locales e nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
@@ -75,34 +75,34 @@
 
 			<div class="precios">
 				<h3>Diamond label</h3>
-				<p><% precio_mensual_2 | currency:"$" %> MXN/ <% meses %> mes</p>
+				<p><% precio_mensual_2 | currency:"$" %> MXN/ <% meses %> mes<% meses > 1 ? 'es' : '' %></p>
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
-					<li><% espacios %> escritorio FIJO</li>
+					<li><% espacios %> escritorio<% espacios > 1 ? 's': '' %> FIJO<% espacios > 1 ? 'S': '' %></li>
 					<li>Llamadas locales e nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
 					<li>Horario de 8:00 a 21:00 hrs.</li>
 					<li>Café</li>
-					<li>Archivero</li>
-					<li>Locker</li>
+					<li>Archivero<% espacios > 1 ? 's': '' %></li>
+					<li>Locker<% espacios > 1 ? 's': '' %></li>
 					<li><a href="save_selection?espacios=<% espacios %>&meses=<% meses %>&paquete_id=2">Solicitar</a></li>
 				</ul>
 			</div>
 			
 			<div class="precios">
 				<h3>Privado</h3>
-				<p><% precio_mensual_3 | currency:"$" %> MXN/ <% meses %> mes</p>
+				<p><% precio_mensual_3 | currency:"$" %> MXN/ <% meses %> mes<% meses > 1 ? 'es' : '' %></p>
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
-					<li><% espacios %> escritorio FIJO</li>
+					<li><% espacios %> escritorio<% espacios > 1 ? 's': '' %> FIJO<% espacios > 1 ? 'S': '' %></li>
 					<li>Llamadas locales e nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
 					<li>Horario de 8:00 a 21:00 hrs.</li>
 					<li>Café</li>
-					<li>Archivero</li>
-					<li>Locker</li>
+					<li>Archivero<% espacios > 1 ? 's': '' %></li>
+					<li>Locker<% espacios > 1 ? 's': '' %></li>
 					<li>Divisi&oacute;n con mampara</li>
 					<li><a href="save_selection?espacios=<% espacios %>&meses=<% meses %>&paquete_id=3">Solicitar</a></li>
 				</ul>
