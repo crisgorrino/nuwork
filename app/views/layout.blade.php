@@ -55,12 +55,12 @@
 <body>
 
 	<!--Header-->
-	<header>
+	<header class="cf">
 		<section class="inner">
 			<a class="left logo" href="<?php echo url('/') ?>"><img src="<?php echo asset('img/logo.png') ?>"  alt="NuWork - Coworking Space"></a>
 			<p class="slogan left">Sketch<br>your business</p>
 			<nav class="main-menu">
-				<ul class="left">
+				<ul class="menu left">
 					<li><a id="reservacionesBtn" class="" href="index.php?target=reservaciones">Reservaciones</a></li>
 					<li><a id="contactoBtn" class="" href="index.php?target=contacto">Cont&aacute;ctanos</a></li>
 					<li><a id="mapaBtn" class="" href="index.php?target=mapa">Ubicaci&oacute;n</a></li>
@@ -70,6 +70,16 @@
 				<a href="https://www.facebook.com/nuworkgdl"><span class="icon-facebook"></span></a>
 				<a href=""><span class="icon-twitter"></span></a>
 				<a href=""><span class="icon-linkedin"></span></a>
+				<ul class="mobile-menu right">
+					<li><a href="#">Menú</a>
+						<ul class="submobile-menu">
+							<li><a id="reservacionesBtn" class="" href="index.php?target=reservaciones">Reservaciones</a></li>
+							<li><a id="contactoBtn" class="" href="index.php?target=contacto">Cont&aacute;ctanos</a></li>
+							<li><a id="mapaBtn" class="" href="index.php?target=mapa">Ubicaci&oacute;n</a></li>
+							<li><a class="" href="<?php echo url('pago') ?>">Pagos</a></li>
+							<li><a class="" href="<?php echo url('comprobante-pago') ?>">Carga tu comprobante</a></li>
+					</ul></li>
+				</ul>
 			</nav>
 		</section>
 	</header>

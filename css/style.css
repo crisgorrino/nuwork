@@ -50,9 +50,8 @@ nav{width: 70%; float: right;}
 .main-menu ul li{display: inline-block; margin: 0; padding: 0;}
 .main-menu ul li a{display: inline-block; margin: 0; padding: 26px 15px; transition: background-color .25s ease-in, color .25s ease-in;  }
 .main-menu ul li a:hover{background: #ff2100; color: #fff;}
-
+.mobile-menu{display: none;}
 /*--Menu Sociales y Cart--*/
-
 
 /*Index*/
 .bg{background: url(../img/bg1.png)no-repeat; background-size: 100%; font-weight: bold;  margin-top: 70px; padding: 10% 0; text-align: center;}
@@ -245,6 +244,17 @@ header{position: relative;}
 
 /*Header*/
 nav{float: none;}
+.menu{display: none;}
+.mobile-menu{display: initial;}
+.mobile-menu li ul{margin-left: -20px; position:absolute; list-style:none; width:123px; top:55px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
+.mobile-menu li:hover ul{max-height:300px;}
+.mobile-menu li ul li{background-color:#fff!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 5px!important; transition: .25s ease; width: 100%; color:#fff!important;}
+.mobile-menu li ul li:hover{background: #0857a2!important; color:#fff!important;}
+.mobile-menu li ul li:hover a{text-decoration:none !important; display:block;border-bottom: 2px solid rgba(0,0,0,0); color: #fff!important;}
+.mobile-menu li ul li:nth-child(odd){ /* zebra stripes */background-color:#363636;}
+.mobile-menu li ul li:hover{background-color:#444;}
+.mobile-menu li ul li:first-child{border-radius:3px 3px 0 0; margin-top:25px; position:relative;}
+.mobile-menu li ul li:last-child{border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
 
 /*--Index--*/
 h1{font-size: 1.5em!important;}
@@ -295,13 +305,28 @@ h1{font-size: 1.5em!important;}
 .totales .confirm-btn{display: block; margin: 20px auto 0 auto;}
 
 /*--Cargar Comprobante--*/
+.carga{width: 100%;}
+.pago-form{width: 100%;}
 
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media all and (min-width : 760px) and (max-width : 1024px) {
+body{font-size: 90%;}
 .inner{width: 96%;}
 
+/*--Main Menu--*/
+.menu{display: none;}
+.mobile-menu{display: initial;}
+.mobile-menu li ul{margin-left: -20px; position:absolute; list-style:none; width:123px; top:55px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
+.mobile-menu li:first-child:hover ul{max-height:300px;}
+.mobile-menu li ul li{background-color:#fff!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 5px!important; transition: .25s ease; width: 100%; color:#fff!important;}
+.mobile-menu li ul li:hover{background: #0857a2!important; color:#fff!important;}
+.mobile-menu li ul li:hover a{text-decoration:none !important; display:block;border-bottom: 2px solid rgba(0,0,0,0); color: #fff!important;}
+.mobile-menu li ul li:nth-child(odd){ /* zebra stripes */background-color:#363636;}
+.mobile-menu li ul li:hover{background-color:#444;}
+.mobile-menu li ul li:first-child{border-radius:3px 3px 0 0; margin-top:25px; position:relative;}
+.mobile-menu li ul li:last-child{border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
 }
 
 /* Desktop, Notebook ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
