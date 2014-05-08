@@ -7,16 +7,16 @@ var app = angular.module('app', [], function($interpolateProvider) {
 app.controller('Pagos', function($scope, $http){
 
 	$scope.pagos = [];
-    $scope.status = [];
+  $scope.status = [];
 
-    $scope.getPagos = function(){
-        $http.get('getPagos').success(function(response){
-            $scope.pagos = response;
-            angular.forEach(response, function(pago){
-                $scope.status[pago.id] = pago.status;
-            });
-        });        
-    };
+  $scope.getPagos = function(){
+      $http.get('getPagos').success(function(response){
+          $scope.pagos = response;
+          angular.forEach(response, function(pago){
+              $scope.status[pago.id] = pago.status;
+          });
+      });        
+  };
 
  	$scope.order = 'id';
  	$scope.reverse = true;

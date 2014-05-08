@@ -10,12 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-
 Route::group(array('before' => 'auth'), function(){
 
-	Route::get('/', function(){
-		// obtener el stock de los paquetes
+
+	Route::get('/', function(){	
 		return View::make('home');	
 	});
 
@@ -57,9 +55,11 @@ Route::group(array('before' => 'auth'), function(){
 	});
 
 	Route::post('pagos', function(){
+		
 		if(Input::has('status')){
 			Session::put('status', Input::get('status'));
 		}
+
 		if(Input::has('tipo_pago')){
 			Session::put('tipo_pago',Input::get('tipo_pago'));
 		}
@@ -168,7 +168,10 @@ Route::group(array('before' => 'auth'), function(){
 				$result = $tmp;	
 			}
 		}
-		
+
+		if(empty($result)){
+			$result = $pagos;
+		}
 		
 		return Response::json($result);
 	});
@@ -185,7 +188,7 @@ Route::group(array('before' => 'auth'), function(){
 			$needed_stock = $solicitud['espacios'];
 			$actual_stock = $stock['stock'];
 
-			// verificar haya espacios disponibles
+			// verificar que haya espacios disponibles
 			if($needed_stock <= $actual_stock){
 				$sufficient = true;
 

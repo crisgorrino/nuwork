@@ -6,54 +6,56 @@
 	<div ng-controller="Pagos" ng-init="getPagos()">
 		<div id="frm-filter">
 			{{ Form::open(array('class'=>"form-inline")) }}
-				<div class="form-group">
-					<label>Status:</label>
-					<select class="form-control" name="status">
-						<option value="0" <?php echo Session::get('status') == '0' ? 'selected' : ''  ?>>Todos</option>
-						<option value="1" <?php echo Session::get('status') == '1' ? 'selected' : ''  ?> >
-							Pendiente
-						</option>
-						<option value="2" <?php echo Session::get('status') == '2' ? 'selected' : ''  ?>>
-							Pagado
-						</option>
-						<option value="3" <?php echo Session::get('status') == '3' ? 'selected' : ''  ?>>
-							Cancelado
-						</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label>Tipo de Pago: </label>
-					<select class="form-control" name="tipo_pago">
-						<option value="0">Todos</option>
-						<option value="Paypal" <?php echo Session::get('tipo_pago') == 'Paypal' ? 'selected' : '' ?> >Paypal</option>
-						<option value="Deposito" <?php echo Session::get('tipo_pago') == 'Deposito' ? 'selected' : '' ?> >Deposito</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label>Nombre:</label>
-					<input type="text" value="<?php echo Session::get('nombre') ?>" class="form-control" name="nombre">
-				</div>
-				<div class="form-group">
-					<label>Apellidos:</label>
-					<input type="text" value="<?php echo Session::get('apellidos') ?>" class="form-control" name="apellidos">
-				</div>
-				<div class="form-group">
-					<label>Desde:</label>
-					<input type="text" value="<?php echo Session::get('desde') ?>" class="form-control datepicker" name="desde">
-				</div>
-				<div class="form-group">
-					<label>Hasta:</label>
-					<input type="text" value="<?php echo Session::get('hasta') ?>" class="form-control datepicker" name="hasta">
-				</div>
-				<div class="form-group">
-					<input type="submit" class="btn btn-success" value="Buscar">	
-				</div>
+			<div class="form-group">
+				<label>Status:</label>
+				<select class="form-control" name="status">
+					<option value="0" <?php echo Session::get('status') == '0' ? 'selected' : ''  ?> >
+						Todos
+					</option>
+					<option value="1" <?php echo Session::get('status') == '1' ? 'selected' : ''  ?> >
+						Pendiente
+					</option>
+					<option value="2" <?php echo Session::get('status') == '2' ? 'selected' : ''  ?>>
+						Pagado
+					</option>
+					<option value="3" <?php echo Session::get('status') == '3' ? 'selected' : ''  ?>>
+						Cancelado
+					</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>Tipo de Pago: </label>
+				<select class="form-control" name="tipo_pago">
+					<option value="0">Todos</option>
+					<option value="Paypal" <?php echo Session::get('tipo_pago') == 'Paypal' ? 'selected' : '' ?> >Paypal</option>
+					<option value="Deposito" <?php echo Session::get('tipo_pago') == 'Deposito' ? 'selected' : '' ?> >Deposito</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>Nombre:</label>
+				<input type="text" value="<?php echo Session::get('nombre') ?>" class="form-control" name="nombre">
+			</div>
+			<div class="form-group">
+				<label>Apellidos:</label>
+				<input type="text" value="<?php echo Session::get('apellidos') ?>" class="form-control" name="apellidos">
+			</div>
+			<div class="form-group">
+				<label>Desde:</label>
+				<input type="text" value="<?php echo Session::get('desde') ?>" class="form-control datepicker" name="desde">
+			</div>
+			<div class="form-group">
+				<label>Hasta:</label>
+				<input type="text" value="<?php echo Session::get('hasta') ?>" class="form-control datepicker" name="hasta">
+			</div>
+			<div class="form-group">
+				<input type="submit" id="buscar" class="btn btn-success" value="Buscar">	
+			</div>
 			{{ Form::close() }}
 			{{ Form::open(array('class'=>"form-inline", 
-								'style'=>'width: 80px; float: right; margin-top: -30px; margin-right: 35px;')) }}
-				<div class="form-group">
-					<input type="submit" class="btn btn-default" value="Reset">
-				</div>
+			'style'=>'width: 80px; float: right; margin-top: -30px; margin-right: 35px;')) }}
+			<div class="form-group">
+				<input type="submit" class="btn btn-default" value="Reset">
+			</div>
 			{{ Form::close() }}
 		</div>
 		<table class="table table-striped">
