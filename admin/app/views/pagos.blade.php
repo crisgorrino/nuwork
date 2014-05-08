@@ -54,6 +54,7 @@
 			{{ Form::open(array('class'=>"form-inline", 
 			'style'=>'width: 80px; float: right; margin-top: -30px; margin-right: 35px;')) }}
 			<div class="form-group">
+				<input type="hidden" name="forget" value="1">
 				<input type="submit" class="btn btn-default" value="Reset">
 			</div>
 			{{ Form::close() }}
@@ -107,12 +108,6 @@
 <style type="text/css">
 	th{
 		cursor: pointer;
-	}
-	#frm-filter{
-		text-align: center;
-		width: 95%;
-		margin: 0 auto;
-		padding-bottom: 20px;
 	}
 </style>
 

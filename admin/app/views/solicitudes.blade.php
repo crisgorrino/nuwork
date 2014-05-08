@@ -1,24 +1,84 @@
 @extends('layout')
 @section('content')
-<section class="cf" ng-app="app">
+<section class="cf" ng-app="app" ng-controller="Solicitudes">
 	<br><br><br><br><br><br>
 	<h1>Solicitudes Realizadas</h1>
-	<div ng-controller="Solicitudes">
+
+	<!-- Filtros -->
+	<div id="frm-filter">
+		{{ Form::open(array('class'=>"form-inline")) }}
+		<div class="form-group">
+			<label>Status:</label>
+			<select class="form-control" name="status_id">
+				<option value="0">Todos</option>
+				@foreach($solicitudes_estatus as $status)
+					@if (Session::get('solicitudes_status_id') == $status['id'])
+						<option value="{{$status['id']}}" selected="">{{ $status['descripcion'] }}</option>	
+					@else
+						<option value="{{$status['id']}}">{{ $status['descripcion'] }}</option>	
+					@endif					
+				@endforeach
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Paquetes:</label>
+			<select class="form-control" name="paquete_id">
+				<option>Todos</option>
+				@foreach ($paquetes as $paquete)
+					@if ($paquete['id'] == Session::get('solicitudes_paquete_id'))
+						<option value="{{$paquete['id']}}" selected="">{{$paquete['nombre']}}</option>
+					@else
+						<option value="{{$paquete['id']}}">{{$paquete['nombre']}}</option>
+					@endif
+				@endforeach
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Nombre:</label>
+			<input type="text" value="<?php echo Session::get('solicitudes_nombre') ?>" class="form-control" name="nombre">
+		</div>
+		<div class="form-group">
+			<label>Apellidos:</label>
+			<input type="text" value="<?php echo Session::get('solicitudes_apellidos') ?>" class="form-control" name="apellidos">
+		</div>
+		<div class="form-group">
+			<label>Desde:</label>
+			<input type="text" value="<?php echo Session::get('solicitudes_desde') ?>" class="form-control datepicker" name="desde">
+		</div>
+		<div class="form-group">
+			<label>Hasta:</label>
+			<input type="text" value="<?php echo Session::get('solicitudes_hasta') ?>" class="form-control datepicker" name="hasta">
+		</div>
+		<div class="form-group">
+			<input type="submit" id="buscar" class="btn btn-success" value="Buscar">	
+		</div>
+		{{ Form::close() }}
+		{{ Form::open(array('class'=>"form-inline", 
+		'style'=>'width: 80px; float: right; margin-top: -30px; margin-right: 35px;')) }}
+		<div class="form-group">
+			<input type="submit" class="btn btn-default" value="Reset">
+		</div>
+		{{ Form::close() }}
+	</div>
+	<!-- End Filtros -->
+
+
+	<div>
 		<table class="table table-striped">
 			<thead>
-				<th ng-click="order='id'; reverse=!reverse">Id</th>
-				<th ng-click="order='paquete'; reverse=!reverse">Paquete</th>
-				<th ng-click="order='meses'; reverse=!reverse">Meses</th>
-				<th ng-click="order='espacios'; reverse=!reverse">Espacios</th>
-				<th ng-click="order='nombre'; reverse=!reverse">Nombre</th>
-				<th ng-click="order='apellidos'; reverse=!reverse">Apellidos</th>
-				<th ng-click="order='titulo'; reverse=!reverse">Titulo</th>
-				<th ng-click="order='facebook'; reverse=!reverse">Facebook</th>
-				<th ng-click="order='correo'; reverse=!reverse">Correo</th>
-				<th ng-click="order='celular'; reverse=!reverse">Celular</th>
-				<th ng-click="order='proyecto'; reverse=!reverse">Proyecto/Empresa</th>
-				<th ng-click="order='status'; reverse=!reverse">Status</th>
-				<th ng-click="order='created_at'; reverse=!reverse">Fecha</th>
+				<th>Id</th>
+				<th>Paquete</th>
+				<th>Meses</th>
+				<th>Espacios</th>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Titulo</th>
+				<th>Facebook</th>
+				<th>Correo</th>
+				<th>Celular</th>
+				<th>Proyecto/Empresa</th>
+				<th>Status</th>
+				<th>Fecha</th>
 				<th></th>
 			</thead>
 			<tr ng-repeat="solicitud in solicitudes | startFrom:currentPage*pageSize | limitTo:pageSize">
@@ -53,4 +113,7 @@
 		cursor: pointer;
 	}
 </style>
+<script type="text/javascript">
+	$('.datepicker').datepicker();
+</script>
 @stop
