@@ -77,7 +77,6 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*--Contacto--*/
 .contact-form{width: 65%; margin: 0 auto; padding: 1.6% 0; color: #444545;}
-.contact-form h3{margin: 0;}
 .contact-form p{margin-top: 1%; width: 65%;}
 .contact{display: inline-block; vertical-align: top; margin-right: 1%; width: 31.95%;}
 .contact input[type="text"], .contact textarea{-webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #949393; display: block; margin-bottom: 2.5%; padding: 2%; width: 100%; transition: .25s ease-in;}
@@ -89,7 +88,7 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .contact ul li{padding: 0; margin-bottom: 2.5%;}
 .contact ul li a{text-decoration: none; border-bottom: 1px solid rgba(255,33,0,0); color: #488dd8; transition: .25s ease-in;}
 .contact ul li a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
-.map{margin: 0; padding: 0;}
+.map{margin: 0; padding: 0; vertical-align: bottom;}
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*--Paquete de Servicios--*/
@@ -239,7 +238,7 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .current{display: inline-block; margin: 0; padding: 26px 15px; transition: background-color .25s ease-in, color .25s ease-in; background: #ff2100; color: #fff;}
 
 /* Mobiles (portrait and landscape) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-@media all and  (min-width : 320px) and (max-width : 759px){
+@media all and (min-width : 320px) and (max-width : 759px){
 body{font-size: 80%;}
 header{position: relative;}
 .inner{width: 96%;}
@@ -256,6 +255,7 @@ h1{font-size: 1.5em!important;}
 .precios{width: 55%; margin: 0 1.6% 5% 1.6%;}
 .contact-form{width: 90%;}
 .contact{width: 100%;}
+.contact:last-child{margin-top: 20px;}
 .contact-form p{width: 100%;}
 
 /*--Adicionales--*/
@@ -293,21 +293,24 @@ h1{font-size: 1.5em!important;}
 .metodo-cred label, .metodo-trans label{width: 59%; display: block; margin: 2.5% auto;}
 .totales{width: 100%;}
 .totales .confirm-btn{display: block; margin: 20px auto 0 auto;}
-.
-}
 
-/* iPads (portrait) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-@media all and (min-width : 760px) and (max-width : 1024px) and (orientation : portrait){
+/*--Cargar Comprobante--*/
 
 }
 
-/* iPads (landscape) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-@media all and (min-width : 760px) and (max-width : 1024px) and (orientation : landscape){
+/* iPads (portrait and landscape) ----------- */
+@media all and (min-width : 760px) and (max-width : 1024px) {
+.inner{width: 96%;}
 
 }
 
-/* Desktop, Notebook and Large screens ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Desktop, Notebook ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+@media all and (min-width : 1025px) and (max-width : 1599px) {
+.inner{width: 80%;}
+
+}
+/* Large screens ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 @media all and (min-width : 1600px) { 
+.inner{width: 65%;}
 
 }
-
