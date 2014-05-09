@@ -244,13 +244,17 @@ body{font-size: 80%;}
 .inner{width: 96%;}
 
 /*Header*/
+.slogan{padding-right: 0; padding-left: 5px; width: 80px; margin-top: 13px;}
+.icon-linkedin, .icon-facebook, .icon-twitter{margin: 20px 3px; font-size: 1em;}
 .logo{width: 21%;}
-.logo img{width: 100%; margin-top: 10px;}
-nav{width: 45%;}
+.logo img{width: 100%; margin-top: 20px;}
+nav{width: 50%;}
 .menu{display: none;}
 .mobile-menu{display: initial;}
+.main-menu ul li a {padding: 26px 14px; color: #ff2100;}
 .mobile-menu li ul{margin-left: -45%; position:absolute; list-style:none; width:300px; top:50px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
-.mobile-menu li:hover ul{max-height:300px; }
+.mobile-menu li ul:link{max-height: 0;}
+.mobile-menu li:hover ul{max-height:300px;}
 .mobile-menu li ul li{background-color:rgba(235,237,237,1)!important; border-right: 2px solid #ff2100; border-left: 2px solid #ff2100; text-align: center; display: inline-block!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 2px!important; transition: .25s ease; width: 100%; color:#fff!important;}
 .mobile-menu li ul li:first-child{border-top: 2px solid #ff2100; }
 .mobile-menu li ul li:last-child{border-bottom: 2px solid #ff2100; }
@@ -327,6 +331,7 @@ nav{width: 63%;}
 .menu{display: none;}
 .mobile-menu{display: initial;}
 .mobile-menu li ul{margin-left: -120px; position:absolute; list-style:none; width:300px; top:50px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear; }
+.mobile-menu li ul:link{max-height: 0;}
 .mobile-menu li:hover ul{max-height:300px; }
 .mobile-menu li ul li{background-color:rgba(235,237,237,1)!important; border-right: 2px solid #ff2100; border-left: 2px solid #ff2100; text-align: center; display: inline-block!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 2px!important; transition: .25s ease; width: 100%; color:#fff!important;}
 .mobile-menu li ul li:first-child{border-top: 2px solid #ff2100; }
