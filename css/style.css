@@ -64,7 +64,7 @@ nav{width: 70%; float: right;}
 .rojo3{background: url(../img/bg-des3.jpg)no-repeat top center; background-size: cover;}
 .rojo1, .rojo2, .rojo3{ -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 320px; float: left; position: relative; margin: 0; padding: 0; width: 33.33%; text-align: center; overflow: hidden;}
 .bgdes1, .bgdes2, .bgdes3{-webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 320px; position: absolute; margin: 0; padding: 15% 5% 20% 5%; transition: background-color .15s ease-in, color .25s ease-in;}
-.bgdes1:hover, .bgdes2:hover, .bgdes3:hover{background: rgba(210,0,0,.65); color: #fff; text-shadow: 0px 0px 2px #000;}
+.bgdes1:hover, .bgdes2:hover, .bgdes3:hover, .bgdes1:active, .bgdes2:active, .bgdes3:active{background: rgba(210,0,0,.65); color: #fff; text-shadow: 0px 0px 2px #000;}
 .nuwork{background: #ebeded; padding: 2.5% 0;}
 .nuwork p{color: #706f6f; margin: 0 auto; font-size: 1.3em; line-height: 1.5em; text-align: center; width: 65%;}
 
@@ -253,7 +253,6 @@ nav{width: 50%;}
 .mobile-menu{display: initial;}
 .main-menu ul li a {padding: 26px 14px; color: #ff2100;}
 .mobile-menu li ul{margin-left: -45%; position:absolute; list-style:none; width:300px; top:50px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
-.mobile-menu li ul:link{max-height: 0;}
 .mobile-menu li:hover ul{max-height:300px;}
 .mobile-menu li ul li{background-color:rgba(235,237,237,1)!important; border-right: 2px solid #ff2100; border-left: 2px solid #ff2100; text-align: center; display: inline-block!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 2px!important; transition: .25s ease; width: 100%; color:#fff!important;}
 .mobile-menu li ul li:first-child{border-top: 2px solid #ff2100; }
