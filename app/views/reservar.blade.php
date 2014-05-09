@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 @section('content');
 <section class="container cf pdd2" ng-app="app">
 	<section class="inner" ng-controller="Reservar">
@@ -10,7 +10,6 @@
             <span class="cant-hd">Personas</span>
             <span class="total-hd">Subtotal</span>
         </div>
-
         <?php echo Form::open(array('url' => 'sendSolicitud', 'id'=>'frm_solicitud')) ?>
         <!--producto-->
         <div class="productos-carrito">
@@ -46,7 +45,7 @@
                 </span>
                 <!--tiempo-->
                 <div class="tiempo"  ng-init="adicional_meses[ {{$adicional['id']}} ] = 1">
-                    <select ng-model="adicional_meses[ {{$adicional['id']}} ]" class="seleccionar" ng-change="getTotales()">
+                    <select ng-model="adicional_meses[ {{$adicional['id']}} ]" class="selec-meses" ng-change="getTotales()">
                         @for($i = 1; $i <= $meses; $i++ )
                             <option value="{{$i}}">{{$i}}</option>
                         @endfor
@@ -55,7 +54,7 @@
                 </div>      
                 <!--cant-->
                 <span class="cant" ng-init="cantidad[ {{$adicional['id']}} ] = 1">
-                    <select ng-model="cantidad[ {{$adicional['id']}} ]" class="seleccionar" ng-change="getTotales()">
+                    <select ng-model="cantidad[ {{$adicional['id']}} ]" class="selec-meses" ng-change="getTotales()">
                         @for($i = 1; $i <= $espacios; $i++ )
                             <option value="{{$i}}">{{$i}}</option>
                         @endfor

@@ -55,7 +55,7 @@
 				<span class="filtro-title">Tiempo requerido:</span>
 				<?php echo Form::select('meses', array(1=>'1 mes', 3=>'3 meses'), NULL, array('class'=>'seleccionar', 'ng-model'=>'meses','ng-change'=>'getPrecioMensual()'))?>
 			</div>
-			<p class="iva">Precios sin IVA inclu&iacute;do</p>
+			<p class="iva">Precios sin IVA</p>
 			
 			<div class="precios">
 				<h3>Gold label</h3>
