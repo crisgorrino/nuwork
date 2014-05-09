@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 @section('content')
 <section class="container cf pdd">
 		<section class="inner">
@@ -62,7 +62,7 @@
             Tienes 48 hrs. para realizar tu pago, de lo contrario tu pedido ser&aacute; cancelado.
             </p>            
             <br>
-            <p>Una vez realizado el dep&oacute;sito o la transferencia bancaria, deber&aacute;s cargar el comprobante ya sea escaneado o impresi&oacute;n de pantalla en nuestro sistema ingresando a Carga tu Comprobante ubicado en la parte superior de nuestra p&aacute;gina, &oacute; bien haciendo <a href="<?php echo url('pago') ?>" class="turq" target="_blank">click aqu&iacute;</a>, con los siguientes datos de usuario:</p>
+            <p>Una vez realizado el dep&oacute;sito o la transferencia bancaria, deber&aacute;s cargar el comprobante ya sea escaneado o impresi&oacute;n de pantalla en nuestro sistema ingresando a Carga tu Comprobante ubicado en la parte superior de nuestra p&aacute;gina, &oacute; bien haciendo <a href="<?php echo url('comprobante-pago') ?>" target="_blank">click aqu&iacute;</a>, con los siguientes datos de usuario:</p>
                 <br>
                     <strong>E-mail: </strong>{{$solicitud['correo']}}<br>
                     <strong>No. Orden: </strong>{{$solicitud['id']}}<br>

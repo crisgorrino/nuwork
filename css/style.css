@@ -16,7 +16,7 @@ Para BitwebMkt*/
 .icon-twitter:before {content: "\e600";}
 .icon-facebook:before {content: "\e601";}
 .icon-linkedin:before {content: "\e602";}
-.icon-linkedin, .icon-facebook, .icon-twitter{border: 1px solid #000; border-radius: 100%; font-size: 1.1em;  padding: 5px; float: right; margin: 20px 5px; transition: .25s ease-in;}
+.icon-linkedin, .icon-facebook, .icon-twitter{border: 1px solid #000; border-radius: 100%; font-size: 1.1em; padding: 5px; float: right; margin: 20px 5px; transition: .25s ease-in;}
 .icon-linkedin:hover, .icon-facebook:hover, .icon-twitter:hover{border: 1px solid #ff2100; color: #ff2100;}
 
 html,body{font-size: 100%; font-family: 'scadaregular'; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; font-smoothing: grayscale;}
@@ -33,7 +33,7 @@ html,body{font-size: 100%; font-family: 'scadaregular'; -moz-osx-font-smoothing:
 .pdd{padding: 14% 0 10% 0;}
 
 /*--Class General--*/
-header{background: rgba(235,237,237,1); box-shadow: 0px 0px 10px #000; overflow: hidden; width: 100%; position: fixed; z-index: 10; top: 0;}
+header{background: rgba(235,237,237,1); box-shadow: 0px 0px 10px #000; width: 100%; position: fixed; z-index: 10; top: 0;}
 header a{color: #000; text-decoration: none;}
 footer{background: #444545; color: #fff; padding: 2.5% 0;}
 .container{width: 100%;}
@@ -168,6 +168,8 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .cant input[type="text"]{width:17%; border: 1px solid #b0afaa; text-align: center; display: inline-block; vertical-align: middle;}
 .tiempo input[type="text"]{width:20%; border: 1px solid #b0afaa; text-align: center; display: inline-block; vertical-align: middle;}
 .pu-total{display: inline-block; vertical-align: middle; width:17%; padding: 0 1%; text-align: center;}
+.selec-meses{-webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background: #646261 url('../img/arrow.png') no-repeat center right; color: #fff; padding: 5px; font-size: 13px; line-height: 100%; border: 1px solid #fff;border-radius: 4px; height: 30px; -webkit-appearance: none; -webkit-appearance:none; -moz-appearance:none; -ms-appearance:none; -o-appearance:none; appearance:none; outline:none; text-indent: 0.01px; text-overflow:''; width: 50%;}
+.selec-meses option{padding: 10px;}
 
 /*--carrito totales--*/
 .totales{margin: 0 auto; width:70%;}
@@ -204,7 +206,7 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 .namedata input[type="text"]:focus{background: #fff; border: 1px solid #488dd8; box-shadow: 0px 0px 2px #488dd8;}
 .contactdata{width: 69%; display: inline-block; vertical-align: top;}
 .contactdata input[type="text"], .contactdata textarea{background: #ebeded; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #949393; display: block; margin-bottom: 1%; padding: .9%; width: 99.9%; transition: .25s ease-in;}
-.contactdata input[type="text"].medio{width: 49.54%; display: inline-block; vertical-align: middle;}
+.contactdata input[type="text"].medio{width: 49.5%; display: inline-block; vertical-align: middle;}
 .contactdata textarea{height: 67px;}
 .contactdata input[type="text"]:focus, .contactdata textarea:focus{background: #fff; border: 1px solid #488dd8; box-shadow: 0px 0px 2px #488dd8;}
 
@@ -239,18 +241,22 @@ footer a:hover{border-bottom: 1px solid rgba(255,33,0,1); color: #ff2100;}
 /* Mobiles (portrait and landscape) ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media all and (min-width : 320px) and (max-width : 759px){
 body{font-size: 80%;}
-header{position: relative;}
 .inner{width: 96%;}
 
 /*Header*/
-nav{float: none;}
+.logo{width: 21%;}
+.logo img{width: 100%; margin-top: 10px;}
+nav{width: 45%;}
 .menu{display: none;}
 .mobile-menu{display: initial;}
-.mobile-menu li ul{margin-left: -20px; position:absolute; list-style:none; width:123px; top:55px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
-.mobile-menu li:hover ul{max-height:300px;}
-.mobile-menu li ul li{background-color:#fff!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 5px!important; transition: .25s ease; width: 100%; color:#fff!important;}
-.mobile-menu li ul li:hover{background: #0857a2!important; color:#fff!important;}
-.mobile-menu li ul li:hover a{text-decoration:none !important; display:block;border-bottom: 2px solid rgba(0,0,0,0); color: #fff!important;}
+.mobile-menu li ul{margin-left: -45%; position:absolute; list-style:none; width:300px; top:50px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
+.mobile-menu li:hover ul{max-height:300px; }
+.mobile-menu li ul li{background-color:rgba(235,237,237,1)!important; border-right: 2px solid #ff2100; border-left: 2px solid #ff2100; text-align: center; display: inline-block!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 2px!important; transition: .25s ease; width: 100%; color:#fff!important;}
+.mobile-menu li ul li:first-child{border-top: 2px solid #ff2100; }
+.mobile-menu li ul li:last-child{border-bottom: 2px solid #ff2100; }
+.mobile-menu li ul li:hover{background: #ff2100!important; color:#fff!important;}
+.mobile-menu li ul li a{text-decoration:none !important; padding: 10px;}
+.mobile-menu li ul li:hover a{padding: 10px; display:block; color: #fff!important;}
 .mobile-menu li ul li:nth-child(odd){ /* zebra stripes */background-color:#363636;}
 .mobile-menu li ul li:hover{background-color:#444;}
 .mobile-menu li ul li:first-child{border-radius:3px 3px 0 0; margin-top:25px; position:relative;}
@@ -272,7 +278,6 @@ h1{font-size: 1.5em!important;}
 .adicionales{width: 60%; float: none; display: block; margin: 0 auto 5% auto;}
 .adicionales:nth-child(4n+1){margin: 0 auto 5% auto;}
 .adicionales:nth-child(4n){margin: 0 auto 5% auto;}
-
 
 /*--Reservar--*/
 .datos-d-reserva{width: 60%;}
@@ -305,8 +310,10 @@ h1{font-size: 1.5em!important;}
 .totales .confirm-btn{display: block; margin: 20px auto 0 auto;}
 
 /*--Cargar Comprobante--*/
-.carga{width: 100%;}
-.pago-form{width: 100%;}
+.loginuser-form h2, .carga{width: 100%; margin-top: 30%;}
+.loginuser-form, .pago-form{width: 100%; margin-bottom: 30%;}
+
+
 
 }
 
@@ -316,24 +323,63 @@ body{font-size: 90%;}
 .inner{width: 96%;}
 
 /*--Main Menu--*/
+nav{width: 63%;}
 .menu{display: none;}
 .mobile-menu{display: initial;}
-.mobile-menu li ul{margin-left: -20px; position:absolute; list-style:none; width:123px; top:55px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
-.mobile-menu li:first-child:hover ul{max-height:300px;}
-.mobile-menu li ul li{background-color:#fff!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 5px!important; transition: .25s ease; width: 100%; color:#fff!important;}
-.mobile-menu li ul li:hover{background: #0857a2!important; color:#fff!important;}
-.mobile-menu li ul li:hover a{text-decoration:none !important; display:block;border-bottom: 2px solid rgba(0,0,0,0); color: #fff!important;}
+.mobile-menu li ul{margin-left: -120px; position:absolute; list-style:none; width:300px; top:50px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear; }
+.mobile-menu li:hover ul{max-height:300px; }
+.mobile-menu li ul li{background-color:rgba(235,237,237,1)!important; border-right: 2px solid #ff2100; border-left: 2px solid #ff2100; text-align: center; display: inline-block!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 2px!important; transition: .25s ease; width: 100%; color:#fff!important;}
+.mobile-menu li ul li:first-child{border-top: 2px solid #ff2100; }
+.mobile-menu li ul li:last-child{border-bottom: 2px solid #ff2100; }
+.mobile-menu li ul li:hover{background: #ff2100!important; color:#fff!important;}
+.mobile-menu li ul li a{text-decoration:none !important; padding: 10px;}
+.mobile-menu li ul li:hover a{padding: 10px; display:block; color: #fff!important;}
 .mobile-menu li ul li:nth-child(odd){ /* zebra stripes */background-color:#363636;}
 .mobile-menu li ul li:hover{background-color:#444;}
 .mobile-menu li ul li:first-child{border-radius:3px 3px 0 0; margin-top:25px; position:relative;}
 .mobile-menu li ul li:last-child{border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
+
+/*--INdex--*/
+.rojo1, .rojo2, .rojo3{height: 250px;}
+.rojo1 h2, .rojo2 h2, .rojo3 h2{font-size: 1.2em;}
+.nuwork p{width: 96%;}
+.precios{width: 29.55%;}
+.contact-form{width: 96%;}
+
+/*--Comprobante--*/
+.loginuser-form{width: 96%;}
+.loginuser-form img:nth-child(4){width: 58%;}
+.adicionales{width: 31.7%;}
+.adicionales:nth-child(4n+1){margin-left: 1.2%;}
+.adicionales:nth-child(4n){margin-right: 1.2%;}
+.adicionales:nth-child(3n+1){margin-left: 0;}
+.adicionales:nth-child(3n){margin-right: 0;}
+.adicionales a{left: 28%;}
+.realizado img{width: 70%;}
+
+/*Reservar*/
+.producto-hd{width: 32%;}
+.producto{width: 35%;}
+.contactdata input[type="text"].medio{width: 49.4%;}
+.totales2 span{width: 15%;}
+
+/*--Metodos de Pago--*/
+.metodos-d-pago{width: 100%;}
+.totales{width: 100%;}
+
 }
 
 /* Desktop, Notebook ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 @media all and (min-width : 1025px) and (max-width : 1599px) {
+body{font-size: 93%;}
 .inner{width: 80%;}
-
+.adicionales a{left: 26%;}
+.slogan{padding-right: 0;}
+nav{width: 68%;}
+.main-menu ul li a{padding: 26px 9px; font-size: .9em;}
+.icon-linkedin, .icon-facebook, .icon-twitter{margin: 20px 3px; font-size: 1em;}
 }
+
 /* Large screens ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 @media all and (min-width : 1600px) { 
 .inner{width: 65%;}

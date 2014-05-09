@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout2')
 @section('content');
 <section class="container cf pdd2">
 	<section class="inner">
