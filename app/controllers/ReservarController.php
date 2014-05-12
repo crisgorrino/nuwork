@@ -82,22 +82,25 @@ class ReservarController extends BaseController {
 		$usuario->save();
 
 		$adicionales = array();
-		foreach(Input::get('adicionales') as $id_adicional){
-			$meses = Input::get('adicional_meses');
-			$espacios = Input::get('adicional_espacios');
+		if(!empty($adicionales)){
+			foreach(Input::get('adicionales') as $id_adicional){
+				$meses = Input::get('adicional_meses');
+				$espacios = Input::get('adicional_espacios');
 
-			$a = new SolicitudFeature();
-			$a->solicitud_id = $solicitud->id;
-			$a->feature_id = $id_adicional;
-			$a->meses = $meses[$id_adicional];
-			$a->espacios = $espacios[$id_adicional];
-			$a->save();
+				$a = new SolicitudFeature();
+				$a->solicitud_id = $solicitud->id;
+				$a->feature_id = $id_adicional;
+				$a->meses = $meses[$id_adicional];
+				$a->espacios = $espacios[$id_adicional];
+				$a->save();
 
-			$feature = Adicional::where('id', '=', $a->feature_id)->first()->toArray();
-			$feature['meses'] = $meses[$id_adicional];
-			$feature['espacios'] = $espacios[$id_adicional];
-			$adicionales[] = $feature;
+				$feature = Adicional::where('id', '=', $a->feature_id)->first()->toArray();
+				$feature['meses'] = $meses[$id_adicional];
+				$feature['espacios'] = $espacios[$id_adicional];
+				$adicionales[] = $feature;
+			}
 		}
+
 
 		$paquete = Paquete::find($solicitud->paquete_id);
 

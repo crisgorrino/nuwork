@@ -23,7 +23,7 @@
 		<div class="form-group">
 			<label>Paquetes:</label>
 			<select class="form-control" name="paquete_id">
-				<option>Todos</option>
+				<option value="0">Todos</option>
 				@foreach ($paquetes as $paquete)
 					@if ($paquete['id'] == Session::get('solicitudes_paquete_id'))
 						<option value="{{$paquete['id']}}" selected="">{{$paquete['nombre']}}</option>

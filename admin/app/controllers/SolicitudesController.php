@@ -30,7 +30,7 @@ class SolicitudesController extends BaseController {
 			 $result = $s;
 		}
 
-		if(Session::get('solicitudes_paquete_id')){
+		if(Session::get('solicitudes_paquete_id') && Session::get('solicitudes_paquete_id') !='0'){
 			$tmp = array();
 			foreach($result as $solicitud){
 				if($solicitud['paquete_id'] == Session::get('solicitudes_paquete_id')){
@@ -40,7 +40,7 @@ class SolicitudesController extends BaseController {
 			$result  = $tmp;
 		}
 
-		if(Session::get('solicitudes_nombre')){
+		if(Session::get('solicitudes_nombre') && Session::get('solicitudes_nombre') != ''){
 			$tmp = array();
 			foreach($result as $solicitud){
 				if(strtolower($solicitud['nombre']) == strtolower(Session::get('solicitudes_nombre')) ){
@@ -50,7 +50,7 @@ class SolicitudesController extends BaseController {
 			$result  = $tmp;
 		}
 
-		if(Session::get('solicitudes_apellidos')){
+		if(Session::get('solicitudes_apellidos') && Session::get('solicitudes_apellidos') != ''){
 			$tmp = array();
 			foreach($result as $solicitud){
 				if(strtolower($solicitud['apellidos']) == strtolower(Session::get('solicitudes_apellidos')) ){
@@ -61,18 +61,18 @@ class SolicitudesController extends BaseController {
 		}
 
 				//filtrar por fecha
-		if(Session::get('solicitudes_desde') && Session::get('solicitudes_hasta')){
+		if(Session::get('solicitudes_desde') != '' && Session::get('solicitudes_hasta') != ''){
 			$tmp = array();
 			foreach ($result as $solicitud) {
 				$created_date = strtotime($solicitud['created_at']);
 				if( $created_date >= strtotime(Session::get('solicitudes_desde')) &&
-				 	$created_date <= strtotime(Session::get('solicitudes_hasta').' +1 day') ){
+				 	$created_date <= strtotime(Session::get('solicitudes_hasta')) ){
 					$tmp[] = $solicitud;
 				}
 			}
 			$result  = !empty($tmp) ? $result : $tmp;
 		}else{
-			if(Session::get('solicitudes_desde')){
+			if(Session::get('solicitudes_desde') != ''){
 				$tmp = array();
 				foreach ($result as $solicitud) {
 					$created_date = strtotime($solicitud['created_at']);
@@ -83,7 +83,7 @@ class SolicitudesController extends BaseController {
 				$result  = $tmp;
 			}
 
-			if(Session::get('solicitudes_hasta')){
+			if(Session::get('solicitudes_hasta') != ''){
 				$tmp = array();
 				foreach ($result as $solicitud) {
 					$created_date = strtotime($solicitud['created_at']);
