@@ -245,7 +245,7 @@ body{font-size: 80%;}
 .inner{width: 96%;}
 
 /*Header*/
-.slogan{padding-right: 0; padding-left: 5px; width: 86px; margin-top: 13px;}
+.slogan{display: none;}
 .icon-linkedin, .icon-facebook, .icon-twitter{margin: 20px 3px; font-size: 1em;}
 .logo{width: 21%; margin-top: 20px;}
 .logo img{width: 100%; }
