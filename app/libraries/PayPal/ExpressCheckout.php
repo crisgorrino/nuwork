@@ -42,7 +42,7 @@ class ExpressCheckout{
 
         $paypal = new PayPal();
         
-        $resArray = $paypal->CallShortcutExpressCheckout($this->currencyCodeType, $this->paymentType, $this->returnURL, $this->cancelURL, $productos, $costo_envio, $iva);
+        $resArray = $paypal->CallShortcutExpressCheckout($this->currencyCodeType, $this->paymentType, \URL::to('paypal'), \URL::to('/'), $productos, $costo_envio, $iva);
         
         $ack = strtoupper($resArray["ACK"]);
         

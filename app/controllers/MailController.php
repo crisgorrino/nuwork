@@ -39,7 +39,7 @@ class MailController extends BaseController {
 			return Redirect::to('/')->withErrors($validation->errors());
 		}else{
 			Mail::send('emails.contact-message-mail', array('datos'=>Input::all()), function($message){
-				$message->to('portela828@gmail.com', 'John Smith')->subject('Nuevo Mensaje de Contacto');
+				$message->to('ventas@nuwork.mx', 'John Smith')->subject('Nuevo Mensaje de Contacto');
 			});
 		}
 		return Redirect::to('/');

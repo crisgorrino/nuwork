@@ -84,8 +84,8 @@
 					<li>Acceso a sala de juntas</li>
 					<li>Horario de 8:00 a 21:00 hrs.</li>
 					<li>Café</li>
-					<li>Archivero<% espacios > 1 ? 's': '' %></li>
-					<li>Locker<% espacios > 1 ? 's': '' %></li>
+					<li><% espacios %> Archivero<% espacios > 1 ? 's': '' %></li>
+					<li><% espacios %> Locker<% espacios > 1 ? 's': '' %></li>
 					<li><a href="save_selection?espacios=<% espacios %>&meses=<% meses %>&paquete_id=2">Solicitar</a></li>
 				</ul>
 			</div>
@@ -101,8 +101,8 @@
 					<li>Acceso a sala de juntas</li>
 					<li>Horario de 8:00 a 21:00 hrs.</li>
 					<li>Café</li>
-					<li>Archivero<% espacios > 1 ? 's': '' %></li>
-					<li>Locker<% espacios > 1 ? 's': '' %></li>
+					<li><% espacios %> Archivero<% espacios > 1 ? 's': '' %></li>
+					<li><% espacios %> Locker<% espacios > 1 ? 's': '' %></li>
 					<li>Divisi&oacute;n con mampara</li>
 					<li><a href="save_selection?espacios=<% espacios %>&meses=<% meses %>&paquete_id=3">Solicitar</a></li>
 				</ul>

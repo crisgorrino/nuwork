@@ -9,7 +9,7 @@
             <div class="metodo-cred cf">
                 <label for="paypal">
                     <img src="<?php echo asset('img/paypal.jpg') ?>" alt="">
-                    <p class="right">Pago con tarjeta de credito:</p>
+                    <p class="right">Pago con tarjeta de crédito:</p>
                     <input id="paypal" type="radio" name="metodo" class="left" ng-model="metodo" value="credito">
                     <img src="<?php echo asset('img/tarjeta-cred.jpg') ?>" alt=""> 
                 </label>
