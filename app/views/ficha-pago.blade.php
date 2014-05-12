@@ -50,7 +50,7 @@
                     <tr>
                         <td colspan="3">&nbsp;</td>
                         <td>
-                        <h4 style="border: 1px solid #000000; text-align: right; padding: 2%;text-align: center;width: 96%;"><strong>TOTAL:&nbsp;</strong> <?php echo $pago_total; ?></h4> 
+                        <h4 style="border: 1px solid #000000; text-align: right; padding: 2%;text-align: center;width: 96%;"><strong>TOTAL:&nbsp;</strong> <?php echo $pago_total ?></h4> 
                         </td>
                     </tr>
             </table>

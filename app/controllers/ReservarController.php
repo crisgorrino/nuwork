@@ -103,7 +103,7 @@ class ReservarController extends BaseController {
 
 		Mail::send( 'emails.solicitud-mail', array('datos'=>Input::all(), 'paquete'=>$paquete, 'adicionales'=>$adicionales), function($message)
 		{
-			$message->to('carlos.cerdau@bitweb.mx', 'Nuwork - Nueva Solicitud')->subject('Nuwork - Nueva Solicitud');
+			$message->to('ventas@nuwork.mx', 'Nuwork - Nueva Solicitud')->subject('Nuwork - Nueva Solicitud');
 		});
 
 		return Redirect::to('solicitud-realizada');

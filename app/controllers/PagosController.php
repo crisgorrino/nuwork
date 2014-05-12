@@ -178,7 +178,7 @@ class PagosController extends BaseController {
 			$orden->AMT = $detalles['AMT'];
 			$orden->PAYMENTREQUEST_0_TRANSACTIONID = $detalles['PAYMENTREQUEST_0_TRANSACTIONID'];
 			$orden->tipo_pago = 'Paypal';
-			$orden->status = 1;
+			$orden->status = 2;
 
 			$orden->save();
 
