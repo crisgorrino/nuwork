@@ -300,7 +300,8 @@ h1{font-size: 1.5em!important;}
 /*--Metodos de Pago--*/
 .metodos-d-pago{width: 100%;}
 .metodo-cred, .metodo-trans{width: 99%; margin-bottom: 30px;}
-.metodo-cred label, .metodo-trans label{width: 59%; display: block; margin: 2.5% auto;}
+.metodo-cred label, .metodo-trans label{width: 70%; display: block; margin: 2.5% auto;}
+.metodo-cred img, .metodo-trans img{float: none;}
 .totales{width: 100%;}
 .totales .confirm-btn{display: block; margin: 20px auto 0 auto;}
 
