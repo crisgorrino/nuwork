@@ -77,7 +77,9 @@
 					</table>
 					<table style="width:560px; margin:0 auto; text-align:center;" height="70" cellspacing="0" cellpadding="0" border="0">
 					<tbody><tr>
-						<td style="width:100%;"><a style="background: #488dd8; border-radius: 4px; border: 1px solid rgba(176,175,170,0); font-weight:bold; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; color: #fff; transition: 1s ease; margin: 0 auto; padding: 5% 14%; text-decoration: none; width: 9%;" onClick="imprSelec('imprimir_html');" class="imprimir bold">Ir al login</a>
+						<td style="width:100%;">
+						<a href="<?php echo asset('../../login') ?>"  style="background: #488dd8; border-radius: 4px; border: 1px solid rgba(176,175,170,0); font-weight:bold; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; color: #fff; transition: 1s ease; margin: 0 auto; padding: 5% 14%; text-decoration: none; width: 9%;" onClick="imprSelec('imprimir_html');" class="imprimir bold">
+						Ir al login</a>
 						</td>
 					</tr>
 				</tbody>
