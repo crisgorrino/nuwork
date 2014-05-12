@@ -15,6 +15,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="<?php echo asset('favicon.ico') ?>" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="<?php echo asset('css/component.css') ?>" type="text/css" media="all">
 	<link rel="stylesheet" href="<?php echo asset('css/style.css') ?>" type="text/css" media="all">
 	<link rel="stylesheet" href="<?php echo asset('css/slideshow.css') ?>" type="text/css" media="all"><!--Estilos para el js de Cycle2-->
 	<link rel="stylesheet" href="<?php echo asset('css/normalize.css') ?>" type="text/css" media="all"><!--Estilos para resetear estilos CSS-->
@@ -24,11 +25,13 @@
 	<script src="<?php echo asset('js/modernizr.js') ?>" type="text/javascript"></script><!--JS para apoyar en buscadores obsoletos-->
 	<script src="<?php echo asset('js/jquery.cycle2.min.js') ?>" type="text/javascript"></script><!--JS de Cycle2 SlideShow-->
 	<script src="<?php echo asset('js/scrolld.min.js') ?>" type="text/javascript"></script><!--Scrolling Smoth-->
-	<script src="<?php echo asset('js/scrolld.min.js') ?>" type="text/javascript"></script><!--JS que permite quitar los prefijos de efectos CSS como -webkit, -moz (no todos) -->
+	<script src="<?php echo asset('js/prefixfree.min.js') ?>" type="text/javascript"></script><!--JS que permite quitar los prefijos de efectos CSS como -webkit, -moz (no todos) -->
 	<script src="<?php echo asset('js/angular/angular.min.js') ?>"></script>
+	<script src="<?php echo asset('js/script.js') ?>" type="text/javascript"></script><!--Menu Mobil-->
+	<script src="<?php echo asset('js/jquery.dlmenu.js') ?>" type="text/javascript"></script><!--Menu Mobil-->
 
 	<script type="text/javascript">
-		$(document).ready(function(){
+	$(document).ready(function(){
 	//Smooth Scrolling To Internal Links
 	$("[id*='Btn']").stop(true).on('click',function(e){e.preventDefault();$(this).scrolld();})
 	<?php
@@ -48,17 +51,27 @@
 		}
 	}
 	?>
-});
+	});
 	</script>
 </head>
 
 <body>
-
 	<!--Header-->
 	<header class="cf">
 		<section class="inner">
 			<a class="left logo" href="<?php echo url('/') ?>"><img src="<?php echo asset('img/logo.png') ?>"  alt="NuWork - Coworking Space"></a>
 			<p class="slogan left">Sketch<br>your business</p>
+			<!--menu moviles-->
+			<div id="dl-menu" class="dl-menuwrapper left">
+			<button class="dl-trigger">Menú</button>
+				<ul class="dl-menu">
+					<li><a id="reservacionesBtn" class="" href="index.php?target=reservaciones">Reservaciones</a></li>
+					<li><a id="contactoBtn" class="" href="index.php?target=contacto">Cont&aacute;ctanos</a></li>
+					<li><a id="mapaBtn" class="" href="index.php?target=mapa">Ubicaci&oacute;n</a></li>
+					<li><a class="" href="<?php echo url('pago') ?>">Pagos</a></li>
+					<li><a class="" href="<?php echo url('comprobante-pago') ?>">Carga tu comprobante</a></li>
+				</ul>
+			</div><!-- /dl-menuwrapper -->
 			<nav class="main-menu">
 				<ul class="menu left">
 					<li><a id="reservacionesBtn" class="" href="index.php?target=reservaciones">Reservaciones</a></li><li>
@@ -70,16 +83,6 @@
 				<a href="https://www.facebook.com/nuworkgdl"><span class="icon-facebook"></span></a>
 				<a href=""><span class="icon-twitter"></span></a>
 				<a href=""><span class="icon-linkedin"></span></a>
-				<ul class="mobile-menu right">
-					<li><a href="#">Menú</a>
-						<ul class="submobile-menu">
-							<li><a id="reservacionesBtn" class="" href="index.php?target=reservaciones">Reservaciones</a></li>
-							<li><a id="contactoBtn" class="" href="index.php?target=contacto">Cont&aacute;ctanos</a></li>
-							<li><a id="mapaBtn" class="" href="index.php?target=mapa">Ubicaci&oacute;n</a></li>
-							<li><a class="" href="<?php echo url('pago') ?>">Pagos</a></li>
-							<li><a class="" href="<?php echo url('comprobante-pago') ?>">Carga tu comprobante</a></li>
-					</ul></li>
-				</ul>
 			</nav>
 		</section>
 	</header>

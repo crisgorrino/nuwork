@@ -50,7 +50,7 @@ nav{width: 70%; float: right;}
 .main-menu ul li{display: inline-block; margin: 0; padding: 0;}
 .main-menu ul li a{display: inline-block; margin: 0; padding: 26px 15px; transition: background-color .25s ease-in, color .25s ease-in;  }
 .main-menu ul li a:hover{background: #ff2100; color: #fff;}
-.mobile-menu{display: none;}
+.dl-menuwrapper{display: none;}
 /*--Menu Sociales y Cart--*/
 
 /*Index*/
@@ -244,27 +244,15 @@ body{font-size: 80%;}
 .inner{width: 96%;}
 
 /*Header*/
-.slogan{padding-right: 0; padding-left: 5px; width: 80px; margin-top: 13px;}
+.slogan{padding-right: 0; padding-left: 5px; width: 86px; margin-top: 13px;}
 .icon-linkedin, .icon-facebook, .icon-twitter{margin: 20px 3px; font-size: 1em;}
-.logo{width: 21%;}
-.logo img{width: 100%; margin-top: 20px;}
+.logo{width: 21%; margin-top: 20px;}
+.logo img{width: 100%; }
 nav{width: 50%;}
 .menu{display: none;}
-.mobile-menu{display: initial;}
-.main-menu ul li a {padding: 26px 14px; color: #ff2100;}
-.mobile-menu li ul{margin-left: -45%; position:absolute; list-style:none; width:300px; top:50px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear;}
-.mobile-menu li:hover ul{max-height:300px;}
-.mobile-menu li ul li{background-color:rgba(235,237,237,1)!important; border-right: 2px solid #ff2100; border-left: 2px solid #ff2100; text-align: center; display: inline-block!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 2px!important; transition: .25s ease; width: 100%; color:#fff!important;}
-.mobile-menu li ul li:first-child{border-top: 2px solid #ff2100; }
-.mobile-menu li ul li:last-child{border-bottom: 2px solid #ff2100; }
-.mobile-menu li ul li:hover{background: #ff2100!important; color:#fff!important;}
-.mobile-menu li ul li a{text-decoration:none !important; padding: 10px;}
-.mobile-menu li ul li:hover a{padding: 10px; display:block; color: #fff!important;}
-.mobile-menu li ul li:nth-child(odd){ /* zebra stripes */background-color:#363636;}
-.mobile-menu li ul li:hover{background-color:#444;}
-.mobile-menu li ul li:first-child{border-radius:3px 3px 0 0; margin-top:25px; position:relative;}
-.mobile-menu li ul li:last-child{border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
-
+.dl-menuwrapper{display: initial;}
+.dl-menuwrapper {width: 73%; max-width: 300px; float: left; position: absolute; perspective: 1000px; perspective-origin: 50% 200%; z-index: 130; left: 55%; margin-top: 13px}
+.dl-menuwrapper .dl-menu {margin: 11px 0 0 0; position: absolute; width: 100%; opacity: 0; pointer-events: none; -webkit-transform: translateY(10px); -moz-transform: translateY(10px); transform: translateY(10px); -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; backface-visibility: hidden;left: -56%;}
 /*--Index--*/
 h1{font-size: 1.5em!important;}
 .bg{background-size: cover; background-position: center;}
@@ -326,22 +314,12 @@ body{font-size: 90%;}
 .inner{width: 96%;}
 
 /*--Main Menu--*/
-nav{width: 63%;}
+nav{width: 16%;}
 .menu{display: none;}
-.mobile-menu{display: initial;}
-.mobile-menu li ul{margin-left: -120px; position:absolute; list-style:none; width:300px; top:50px;/* This is important for the show/hide CSS animation */ max-height:0px; overflow:hidden; transition:max-height 0.4s linear; }
-.mobile-menu li ul:link{max-height: 0;}
-.mobile-menu li:hover ul{max-height:300px; }
-.mobile-menu li ul li{background-color:rgba(235,237,237,1)!important; border-right: 2px solid #ff2100; border-left: 2px solid #ff2100; text-align: center; display: inline-block!important; -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 2px!important; transition: .25s ease; width: 100%; color:#fff!important;}
-.mobile-menu li ul li:first-child{border-top: 2px solid #ff2100; }
-.mobile-menu li ul li:last-child{border-bottom: 2px solid #ff2100; }
-.mobile-menu li ul li:hover{background: #ff2100!important; color:#fff!important;}
-.mobile-menu li ul li a{text-decoration:none !important; padding: 10px;}
-.mobile-menu li ul li:hover a{padding: 10px; display:block; color: #fff!important;}
-.mobile-menu li ul li:nth-child(odd){ /* zebra stripes */background-color:#363636;}
-.mobile-menu li ul li:hover{background-color:#444;}
-.mobile-menu li ul li:first-child{border-radius:3px 3px 0 0; margin-top:25px; position:relative;}
-.mobile-menu li ul li:last-child{border-bottom-left-radius:3px;border-bottom-right-radius:3px;}
+.dl-menuwrapper{display: initial;}
+.dl-menuwrapper {width: 73%;max-width: 300px;float: right;position: absolute;perspective: 1000px;perspective-origin: 50% 200%;z-index: 130;left: 75%;margin-top: 13px;}
+.dl-menuwrapper .dl-menu {margin: 11px 0 0 0;position: absolute;width: 214.4%;opacity: 0;pointer-events: none;-webkit-transform: translateY(10px);-moz-transform: translateY(10px);transform: translateY(10px);-webkit-backface-visibility: hidden;-moz-backface-visibility: hidden;backface-visibility: hidden;left: -174%;}
+.dl-menuwrapper li {float: left;}
 
 /*--INdex--*/
 .rojo1, .rojo2, .rojo3{height: 250px;}
@@ -381,7 +359,7 @@ body{font-size: 93%;}
 .slogan{padding-right: 0;}
 nav{width: 68%;}
 .main-menu ul li a{padding: 26px 9px; font-size: .9em;}
-.icon-linkedin, .icon-facebook, .icon-twitter{margin: 20px 3px; font-size: 1em;}
+.icon-linkedin, .icon-facebook, .icon-twitter{margin: 20px 2px; font-size: 1em;}
 }
 
 /* Large screens ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
