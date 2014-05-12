@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'f.portela@bitweb.mx', 'name' => 'Flavio Portela'),
+	'from' => array('address' => 'f.portela@bitweb.mx', 'name' => 'Nuwork - Contacto'),
 
 	/*
 	|--------------------------------------------------------------------------

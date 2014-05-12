@@ -63,7 +63,7 @@
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
 					<li><% espacios %> escritorio<% espacios > 1 ? 's': '' %> en área en comun</li>
-					<li>Llamadas locales e nacionales</li>
+					<li>Llamadas locales y nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
 					<li>Horario de 8:00 a 21:00 hrs.</li>
@@ -79,7 +79,7 @@
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
 					<li><% espacios %> escritorio<% espacios > 1 ? 's': '' %> FIJO<% espacios > 1 ? 'S': '' %></li>
-					<li>Llamadas locales e nacionales</li>
+					<li>Llamadas locales y nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
 					<li>Horario de 8:00 a 21:00 hrs.</li>
@@ -96,7 +96,7 @@
 				<img src="<?php echo asset('img/nuwork-tmb.jpg') ?>">
 				<ul>
 					<li><% espacios %> escritorio<% espacios > 1 ? 's': '' %> FIJO<% espacios > 1 ? 'S': '' %></li>
-					<li>Llamadas locales e nacionales</li>
+					<li>Llamadas locales y nacionales</li>
 					<li>Internet de alta velocidad</li>
 					<li>Acceso a sala de juntas</li>
 					<li>Horario de 8:00 a 21:00 hrs.</li>
