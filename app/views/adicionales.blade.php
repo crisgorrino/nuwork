@@ -11,7 +11,7 @@
 				<li>$500.00 MXN + I.V.A. al mes</li>
 				<li>Maneja tu contabilidad de manera correcta con nuestra contadora.</li>
 			</ul>
-			<a ng-class="{'saved' : adicional_1}" ng-click="adicional_1 = !adicional_1">Agregar</a>
+			<p><a ng-class="{'saved' : adicional_1}" ng-click="adicional_1 = !adicional_1">Agregar</a></p>
 		</div>
 
 		<div class="adicionales">
@@ -21,7 +21,7 @@
 				<li>$300.00 MXN + I.V.A. al mes</li>
 				<li>Guarda tus archivos de manera segura.</li>
 			</ul>
-			<a ng-class="{'saved' : adicional_2}" ng-click="adicional_2 = !adicional_2">Agregar</a>
+			<p><a ng-class="{'saved' : adicional_2}" ng-click="adicional_2 = !adicional_2">Agregar</a></p>
 		</div>
 
 		<div class="adicionales">
@@ -31,7 +31,7 @@
 				<li>$200.00 MXN + I.V.A. al mes</li>
 				<li>Ten tu locker para tu mayor comodidad y seguridad de tus pertenencias.</li>
 			</ul>
-			<a ng-class="{'saved' : adicional_3}" ng-click="adicional_3 = !adicional_3">Agregar</a>
+			<p><a ng-class="{'saved' : adicional_3}" ng-click="adicional_3 = !adicional_3">Agregar</a></p>
 		</div>
 
 		<div class="adicionales">
@@ -41,7 +41,7 @@
 				<li>$500.00 MXN + I.V.A. al mes</li>
 				<li>Ten acceso a un mentor personal que da una a tus metas y estrategias de venta.</li>
 			</ul>
-			<a ng-class="{'saved' : adicional_4}" ng-click="adicional_4 = !adicional_4">Agregar</a>
+			<p><a ng-class="{'saved' : adicional_4}" ng-click="adicional_4 = !adicional_4">Agregar</a></p>
 		</div>
 
 		<div class="adicionales">
@@ -51,7 +51,7 @@
 				<li>$1,200.00 MXN + I.V.A. al mes</li>
 				<li>Ten acceso a un mentor personal que da una a tus metas y estrategias de venta.</li>
 			</ul>
-			<a ng-class="{'saved' : adicional_5}" ng-click="adicional_5 = !adicional_5">Agregar</a>
+			<p><a ng-class="{'saved' : adicional_5}" ng-click="adicional_5 = !adicional_5">Agregar</a></p>
 		</div>
 	</section>
 	<?php echo Form::open() ?>
