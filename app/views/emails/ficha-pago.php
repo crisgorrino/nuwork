@@ -4,7 +4,7 @@
         <tr>
             <td>
             <?php
-            $beneficiario='ALEJANDRO CRESPO GONZ&Acute;LEZ';
+            $beneficiario='ALEJANDRO CRESPO GONZ&Aacute;LEZ';
             $no_cuenta='4043505981'; //'01002633906';
             $CLABE='021320040435059811'; //'044320010026339067';
             $rfc='GOGR910620JF2'; //'CEUC8912016GA';
@@ -22,7 +22,7 @@
                 <table border="0" bordercolor="#0000" style="background-color:transparent; width:900px;" cellpadding="3" cellspacing="1">
                     <tr style="">
                         <td style="" colspan="2">
-                        <p style="padding: 2%; border: 1px solid rgb(0, 0, 0); vertical-align: middle; width: 96%;"><strong>Lugar y Fecha:</strong><br />ZAPOPAN, JAL&nbsp;&nbsp;&nbsp;17 febrero 1999<br> 
+                        <p style="padding: 2%; border: 1px solid rgb(0, 0, 0); vertical-align: middle; width: 96%;"><strong>Lugar y Fecha:</strong><br />ZAPOPAN, JAL&nbsp;&nbsp;&nbsp;<?php echo date('d/m/Y')?><br> 
                         </p>
                         </td>
                         <td colspan="2">

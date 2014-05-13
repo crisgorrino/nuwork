@@ -6,7 +6,7 @@
         <tr>
             <td>
             <?php
-            $beneficiario='ALEJANDRO CRESPO GONZALEZ';
+            $beneficiario='ALEJANDRO CRESPO GONZ&Aacute;LEZ';
             $no_cuenta='4043505981'; //'01002633906';
             $CLABE='021320040435059811'; //'044320010026339067';
             $rfc='GOGR910620JF2'; //'CEUC8912016GA';
