@@ -14,9 +14,9 @@ class PayPal {
     //'------------------------------------
     //' PayPal API Credentials
     //'------------------------------------
-    public $API_UserName = "portela828-facilitator_api1.gmail.com";
-    public $API_Password = "1396276197";
-    public $API_Signature = "AMmWdM0x7b2fJY2dwpm8M6C1XjDGAD5hwugYplOLXw4sWhwtf0TLFU4t";
+    public $API_UserName = "acrespo1209_api1.gmail.com";
+    public $API_Password = "9UNNUUENTGL5WB53";
+    public $API_Signature = "Aeu25Btp9SzE.9eEs7gVrYGkmdhUAXjQ0pRpdHb2LD4Qm5n3oC0o-KUV";
     
     // BN Code 	is only applicable for partners
     public $sBNCode = "PP-ECWizard";
@@ -24,7 +24,7 @@ class PayPal {
     public $version = "93";
     public $API_Endpoint;
     public $PAYPAL_URL;
-    public $SandboxFlag = true;
+    public $SandboxFlag = false;
     
     public function __construct() {
          /* 	

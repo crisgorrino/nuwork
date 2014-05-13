@@ -16,7 +16,7 @@
                 <label for="banco">
                     <img src="<?php echo asset('img/blank.jpg') ?>" alt="">
                     <p class="right">Pago con tarjetas de débito emitidas por:</p>
-                    <input id="banco" type="radio" name="metodo" class="left" value="debito"  ng-model="metodo" class="left">
+                    <input id="banco" type="radio" name="metodo" class="left" ng-model="metodo" value="debito">
                     <img src="<?php echo asset('img/tarjeta-deb.jpg') ?>" alt="" class="right">
                 </label>
             </div>
@@ -35,10 +35,10 @@
         <section class="totales cf">
             <span>TOTAL</span>
             <p id="ajax_gran_total">$<?php echo number_format($total) ?> MXN</p>
-            <?php echo Form::open() ?>
+            <form action="pago" method="post">
                 <input type="hidden" name="metodo" value="<% metodo %>">
                 <input type="submit" class="confirm-btn" value="Continuar">
-            <?php echo Form::close() ?>
+            </form>
             <ul>   
                 <li>El precio es la suma de todas las personas.</li>
                 <li>El pago es por anticipado.</li>

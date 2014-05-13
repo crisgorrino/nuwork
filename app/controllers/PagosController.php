@@ -33,6 +33,10 @@ class PagosController extends BaseController {
 	}
 
 	public function procesarPago(){
+	
+		dd(Input::all());
+
+
 		$total = 0;
 
 		$productos = array();
@@ -71,6 +75,7 @@ class PagosController extends BaseController {
 			$productos['item_qty'][$i] 		= 1;
 			$i++;
 		}
+
 		if(Input::get('metodo') == 'credito' || Input::get('metodo') == 'debito'){
 			$paypal = new PayPalLib\ExpressCheckout();
 			$paypal->doCheckout($productos, 0, $total * .16);
