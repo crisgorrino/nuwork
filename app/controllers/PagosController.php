@@ -34,9 +34,6 @@ class PagosController extends BaseController {
 
 	public function procesarPago(){
 	
-		dd(Input::all());
-
-
 		$total = 0;
 
 		$productos = array();

@@ -4,5 +4,5 @@ var app = angular.module('app', [], function($interpolateProvider) {
 });
 
 app.controller('Pago', function($scope){
-	$scope.metodo = 'transferencia'
+	$scope.metodo = 'credito'
 });
